@@ -3,13 +3,448 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> </title>
+<title>DokoOita（どこ置いた？）</title>
 <style>
-body { margin: 0; padding: 20px 0 0 0; background: #f5f5f5; text-align: center; }
-img { max-width: 100%; height: auto; }
+  :root{
+    --main-color:#3a3a6a;
+    --accent:#5b6fd8;
+    --bg-pink:#fff0f5;
+    --bg-light:#ffffff;
+    --bg-soft:#f5f3ff;
+  }
+  body{
+    margin:0;
+    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
+    color:#333;
+    background:var(--bg-pink);
+    line-height:1.7;
+  }
+  header{
+    background:linear-gradient(135deg,#3a4f9c,#5b6fd8);
+    color:#fff;
+    padding:24px 16px;
+    text-align:center;
+  }
+  header img.icon{
+    width:90px;
+    height:90px;
+    border-radius:18px;
+    vertical-align:middle;
+    margin-right:14px;
+    border:4px solid #fff;
+    background:#fff;
+  }
+  header h1{
+    display:inline-block;
+    vertical-align:middle;
+    font-size:2.4em;
+    margin:0;
+  }
+  header p.catch{
+    font-size:1.1em;
+    margin:14px 0 6px;
+    font-weight:bold;
+  }
+  header a.store-link{
+    display:inline-block;
+    margin-top:12px;
+    padding:10px 22px;
+    background:#fff;
+    color:var(--accent);
+    border-radius:24px;
+    text-decoration:none;
+    font-weight:bold;
+  }
+  main{
+    max-width:1000px;
+    margin:0 auto;
+    padding:16px;
+  }
+  section{
+    background:var(--bg-light);
+    border-radius:16px;
+    padding:20px;
+    margin:24px 0;
+    box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  }
+  section h2{
+    color:var(--main-color);
+    border-left:6px solid var(--accent);
+    padding-left:10px;
+    margin-top:0;
+  }
+  .gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:16px;
+    justify-content:flex-start;
+    margin-top:16px;
+  }
+  .gallery figure{
+    flex:1 1 150px;
+    max-width:200px;
+    margin:0;
+    text-align:left;
+  }
+  .gallery img{
+    width:100%;
+    border-radius:10px;
+    border:1px solid #ddd;
+    display:block;
+  }
+  .gallery figcaption{
+    font-size:0.85em;
+    color:#555;
+    margin-top:6px;
+  }
+  .highlight-box{
+    background:var(--bg-soft);
+    border-radius:12px;
+    padding:16px;
+    margin:16px 0;
+  }
+  .alert-text{
+    color:#e63946;
+    font-size:1.4em;
+    font-weight:bold;
+    margin:0 0 8px 0;
+  }
+  footer{
+    background:#2c2c4d;
+    color:#fff;
+    text-align:center;
+    padding:30px 16px;
+    margin-top:40px;
+  }
+  footer h2{
+    color:#fff;
+    border:none;
+  }
+  footer ul{
+    list-style:none;
+    padding:0;
+    display:inline-block;
+    text-align:left;
+  }
+  footer li{
+    margin:6px 0;
+  }
+  footer a.install-link{
+    display:inline-block;
+    margin-top:16px;
+    padding:12px 28px;
+    background:#ffd166;
+    color:#2c2c4d;
+    border-radius:24px;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:1.1em;
+  }
 </style>
 </head>
 <body>
-<img src="DokoOita-HP用_OL_96.jpg" alt="DokoOita App Poster">
+
+<header>
+  <img class="icon" src="app_icon_512.png" alt="DokoOitaアプリのアイコン">
+  <h1>DokoOita - どこ置いた？</h1>
+  <p class="catch">置き場所＆買い物メモ＆レシート＆家計簿＆終活</p>
+  <p>大切なものをしまった場所、買い物のメモ、レシートの記録、家計簿、そして終活の記録まで。<br>
+  写真と一言メモで、暮らしの「あれ、どこだっけ？」をまとめて解決するアプリです。</p>
+  <a class="store-link" href="https://play.google.com/store/apps/details?id=jp.dokoita.android" target="_blank" rel="noopener">
+    Google Playでダウンロード
+  </a>
+</header>
+
+<main>
+
+  <!-- ===================== 置き場所記録 ===================== -->
+  <section id="oki">
+    <h2>① 置き場所記録</h2>
+    <p>
+      「これ、どこに置いたっけ？」と探し回った経験はありませんか。
+      DokoOitaなら、しまった物をスマホで撮影して、写真に丸印や文字を書き込み、
+      声で説明を入力するだけで、簡単に記録できます。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="カメラから登録-3.jpg" alt="カメラで撮影している画面">
+        <figcaption>① まずはカメラで、しまう物を撮影します。</figcaption>
+      </figure>
+      <figure>
+        <img src="カメラから登録-9.jpg" alt="撮影した写真に丸印と文字を書き込んでいる画面">
+        <figcaption>② 写真に丸印を付けて、何を入れたか分かるようにします。</figcaption>
+      </figure>
+      <figure>
+        <img src="カメラから登録-10.jpg" alt="名前の欄に文字が入力されている画面">
+        <figcaption>③ 名前を音声入力したり、キーボードで入力したりして登録します。</figcaption>
+      </figure>
+      <figure>
+        <img src="置き場所-1.jpg" alt="登録された置き場所の一覧画面">
+        <figcaption>④ 登録したら、一覧から好きな項目をタップします。</figcaption>
+      </figure>
+      <figure>
+        <img src="置き場所-2.jpg" alt="登録内容の詳細画面">
+        <figcaption>⑤ 写真と一緒に、名前・置き場所・部屋などの詳細が表示されます。</figcaption>
+      </figure>
+      <figure>
+        <img src="置き場所-3.jpg" alt="拡大表示された写真">
+        <figcaption>⑥ 写真をタップすると拡大表示され、詳しく確認できます。</figcaption>
+      </figure>
+    </div>
+
+    <div class="highlight-box">
+      <p class="alert-text">皆さんは経験ある？</p>
+      <p style="margin:0;">
+        しまい込んだ場所を思い出せずに、仕方なく同じものを再購入してしまった……。
+        そんな経験のある方は、ぜひこのアプリ「DokoOita（どこ置いた？）」を活用してみてください。
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== 買い物メモ ===================== -->
+  <section id="shopping">
+    <h2>② 買い物のメモ</h2>
+    <p>
+      買い物に出かけるとき、購入する物をメモ書きしていませんか。このアプリを使えば、
+      その手書きのメモは不要です。登録した商品リストをスワイプしながら、
+      買う予定の物には「今日買う」のチェックを入れます。
+      最後まで選んだら「今日買うリスト表示」を選択すると、写真付きの購入品リストが完成します。
+    </p>
+    <p>
+      手書きのメモのように、文字だけで見たい場合は「テキスト表示」ボタンを押せば
+      買い物メモが完成します。お店で買い物かごに入れたら、該当の商品を右にスワイプすると
+      取り消し線が引かれます。これまで手書きのメモ書きで線を引いて消していた作業が、
+      タップひとつで済みます。
+    </p>
+    <p>
+      リストに登録していない商品をその場で買いたくなったときは、「追加メモ」ボタンから
+      自由にメモを書き加えることができます。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="買い物メモ-1.jpg" alt="商品の詳細画面、今日買うチェックが未選択">
+        <figcaption>① 登録した商品の一覧から、買いたい物を選びます。</figcaption>
+      </figure>
+      <figure>
+        <img src="買い物メモ-2.jpg" alt="今日買うのチェックが入った画面">
+        <figcaption>② 「今日買う」にチェックを入れます。</figcaption>
+      </figure>
+      <figure>
+        <img src="買い物メモ-3.jpg" alt="追加メモを入力するポップアップ画面">
+        <figcaption>③ リストにない物は「追加メモ」からその場で書き加えられます。</figcaption>
+      </figure>
+      <figure>
+        <img src="買い物メモ-4.jpg" alt="完成した買い物メモ。購入済みの商品に取り消し線が入っている">
+        <figcaption>④ 買い物かごに入れた商品は、取り消し線で完了が分かります。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== 共有・検索機能 ===================== -->
+  <section id="share-search">
+    <h2>③ 家族で共有 ＆ 検索機能</h2>
+    <p>
+      登録した商品の情報は、家族にも簡単に共有できます。共有したい商品を選んで、
+      「この1件」を選択すれば、LINEなどのアプリで送信できます。
+      お店にいる家族に「これを買ってきて」と伝えるときにも便利です。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="共有送信-1.jpg" alt="共有先のアプリを選ぶ画面、LINEが表示されている">
+        <figcaption>① 共有ボタンをタップする。</figcaption>
+      </figure>
+      <figure>
+        <img src="共有送信-2.jpg" alt="LINEのトーク画面に商品の写真と情報が送信されている">
+        <figcaption>② 「この1件」をタップする。</figcaption>
+      </figure>
+      <figure>
+        <img src="共有送信-3.jpg" alt="LINEで受信した商品写真の拡大表示">
+        <figcaption>③ LINEを選択する。</figcaption>
+      </figure>
+      <figure>
+        <img src="共有送信-4.jpg" alt="登録済み商品の詳細画面">
+        <figcaption>④ 主人のLINEに依頼が届きました。</figcaption>
+      </figure>
+      <figure>
+        <img src="共有送信-5.jpg" alt="共有の対象を選ぶダイアログ">
+        <figcaption>⑤ 主人はLINEタップの拡大表示で内容がひと目で把握できます。</figcaption>
+      </figure>
+    </div>
+
+    <p style="margin-top:24px;">
+      登録した商品が増えてくると、欲しい情報を探し出すのも一苦労です。
+      DokoOitaには、店舗名や商品名で絞り込める検索機能があります。
+      「店舗名＆商品名」のように複数の言葉を組み合わせて検索することもできますし、
+      「店舗名ORもう一つの店舗名」と入力すれば、複数の店舗の商品をまとめて検索することも可能です。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="検索-1.jpg" alt="アルク＆納豆で検索し、1件が表示された画面">
+        <figcaption>例1：「店舗名＆商品名」で検索すると、両方に当てはまる商品だけが表示されます。</figcaption>
+      </figure>
+      <figure>
+        <img src="検索-2.jpg" alt="アルクのみで検索し、52件が表示された画面">
+        <figcaption>例2：店舗名だけで検索すると、その店舗の商品がすべて表示されます。</figcaption>
+      </figure>
+      <figure>
+        <img src="検索-3.jpg" alt="アルクORコスモスで検索し、102件が表示された画面">
+        <figcaption>例3：「店舗名OR別の店舗名」で検索すると、2つの店舗の商品をまとめて表示できます。</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ===================== レシートと家計簿 ===================== -->
+  <section id="kakeibo">
+    <h2>④ レシートと家計簿</h2>
+    <p>
+      お買い物のあとは、レシートを写真に撮るだけで家計簿に記録できます。
+      登録方法は2種類あります。AIによる自動解析を使うと、店舗名・商品名・価格を
+      AIが自動で読み取り、入力までしてくれます。手動入力を選んだ場合は、
+      店舗名・商品名・価格を声で入力するだけで登録できます。
+      店舗ごとに「内税」か「外税」かを選ぶこともできます。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="レシートと家計簿-1.jpg" alt="レシートをカメラで撮影する画面">
+        <figcaption>① レシートから一括登録をタップする。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-2.jpg" alt="AIが解析中であることを示す画面">
+        <figcaption>② AI解析をタップする。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-3.jpg" alt="解析結果を確認する画面">
+        <figcaption>③ カメラでレシート撮影する。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-4.jpg" alt="家計簿に登録しますかと尋ねるポップアップ">
+        <figcaption>④ AIが内容を解析している間、少し待ちます。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-5.jpg" alt="家計簿入力画面、種別と支払額が表示されている">
+        <figcaption>⑤ 各内容を確認し、必要に応じて修正して登録します。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-6.jpg" alt="簡易家計簿のメニュー画面">
+        <figcaption>⑥ レシートからデータ引き継ぎで家計簿登録します。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-7.jpg" alt="登録方法を選ぶ画面、AI解析と手動入力の選択肢">
+        <figcaption>⑦ 種別と分類を入力して登録完了。</figcaption>
+      </figure>
+    </div>
+
+    <h2 style="margin-top:36px;">⑤ レシートと家計簿の集計</h2>
+    <p style="margin-top:16px;">
+      毎回の買い物でレシートを読み込むだけで、家計簿のデータがどんどん積み重なっていきます。
+      集めたデータは、店舗別・日付別・曜日別など、さまざまな切り口で集計できます。
+      たとえば「アルクで先週いくら使ったか」や「りんごを何回買ったか」なども、
+      簡単な絞り込みで確認できます。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="レシートと家計簿-8.jpg" alt="レシート集計で店舗名にアルクを指定した画面">
+        <figcaption>① 出力方法を選択します。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-9.jpg" alt="品名にりんごを指定した画面">
+        <figcaption>② レシートの店舗別の出力。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-10.jpg" alt="りんごの購入履歴、2回分が表示されている">
+        <figcaption>③ レシートの日付別の出力。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-11.jpg" alt="家計簿集計で支払先にアルクを指定した画面">
+        <figcaption>④ レシートの曜日別の出力。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-12.jpg" alt="家計簿の集計結果、支払総額が表示されている">
+        <figcaption>⑤ レシートの店舗名をアルクで指定する。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-13.jpg" alt="出力方法を選択する画面">
+        <figcaption>⑥ さらに、レシートの品名をりんごで指定する。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-14.jpg" alt="店舗別の集計結果、アルクの支払総額が表示されている">
+        <figcaption>⑦ 店舗が「アルク」で品名が「りんご」のレシートの購入だけが表示されます。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-15.jpg" alt="日付別の集計結果">
+        <figcaption>⑧ 店舗名「アルク」の家計簿集計を指定する。</figcaption>
+      </figure>
+      <figure>
+        <img src="レシートと家計簿-16.jpg" alt="曜日別の集計結果">
+        <figcaption>⑨ 店舗名「アルク」での利用金額が日付別に集計表示されます。</figcaption>
+      </figure>
+    </div>
+
+    <p style="margin-top:16px;">
+      このほかにも、いろいろな組み合わせで検索・集計が可能です。家計簿を続けるのが
+      苦手な方にも、AI判定を利用すればレシート写真を撮るだけで続けられる仕組みになっています。
+    </p>
+  </section>
+
+  <!-- ===================== 終活記録 ===================== -->
+  <section id="syukatsu">
+    <h2>⑥ 終活記録</h2>
+    <p>
+      DokoOitaは、ものの置き場所や買い物の記録だけでなく、「終活」の記録にも使うことができます。
+      大切な人への伝言や、財産・資産に関する情報を、写真や動画とともに残しておけます。
+    </p>
+
+    <div class="gallery">
+      <figure>
+        <img src="終活-1.jpg" alt="終活記録の一覧画面、宛名ごとに登録されている">
+        <figcaption>① 「妻へ」「長女へ」のように、宛名ごとに記録を一覧で確認できます。</figcaption>
+      </figure>
+      <figure>
+        <img src="終活-2.jpg" alt="妻への記録の詳細画面">
+        <figcaption>② それぞれの記録には、宛名・品名・資産の種類などを登録できます。</figcaption>
+      </figure>
+      <figure>
+        <img src="終活-3.jpg" alt="拡大表示された写真と伝言文">
+        <figcaption>③ 写真を拡大すると、家族への伝言メッセージも一緒に表示されます。</figcaption>
+      </figure>
+      <figure>
+        <img src="終活-4.jpg" alt="お仏壇を動画で撮影している画面">
+        <figcaption>④ 写真だけでなく、動画でも記録を残すことができます。</figcaption>
+      </figure>
+      <figure>
+        <img src="終活-5.jpg" alt="登録された動画を再生する画面">
+        <figcaption>⑤ 登録した動画は、いつでも再生して確認できます。</figcaption>
+      </figure>
+    </div>
+
+    <p>
+      LINEへの共有機能を使えば、記録した内容を家族にそのまま送ることもできます。
+      もしものときに備えて、大切な情報を整理しておきたい方にもおすすめです。
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <h2>無料アプリ ／ Androidスマホ専用</h2>
+  <p>こんな方に最適です！</p>
+  <ul>
+    <li>・ 物忘れが増えてきたと感じる方</li>
+    <li>・ 買い物や家計管理を効率化したい方</li>
+    <li>・ 店舗ごとの価格を比較したい節約家の方</li>
+    <li>・ 終活を始めたい方</li>
+  </ul>
+  <br>
+  <a class="install-link" href="https://play.google.com/store/apps/details?id=jp.dokoita.android" target="_blank" rel="noopener">
+    インストールはこちら（Google Play）
+  </a>
+</footer>
+
 </body>
 </html>
