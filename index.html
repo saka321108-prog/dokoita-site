@@ -1,519 +1,246 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DokoOita - どこ置いた？｜置き場所・買い物リスト・家計簿・終活記録アプリ</title>
-
-<!-- 検索エンジン向けメタタグ -->
-<meta name="description" content="DokoOita（どこ置いた？）は、物の置き場所記録・買い物リスト・レシート管理・家計簿・終活記録がひとつにまとまった無料Androidアプリです。シニアの物忘れ対策にも最適。写真＋音声入力で簡単記録。">
-<meta name="keywords" content="DokoOita,どこ置いた,どこおいた,Androidアプリ,保管場所,置き場所,シニア向け,物忘れ対策,買い物リスト,買い物メモ,家計簿,レシート,終活,置き場所記録,物の場所,しまった場所,節約,家計管理,終活記録,無料アプリ">
-<meta name="author" content="DokoOita">
-<meta name="robots" content="index, follow">
-
-<!-- OGP（SNSシェア時の表示設定） -->
-<meta property="og:title" content="DokoOita - どこ置いた？｜置き場所・買い物リスト・家計簿・終活記録アプリ">
-<meta property="og:description" content="物の置き場所記録・買い物リスト・レシート管理・家計簿・終活記録がひとつにまとまった無料Androidアプリ。シニアの物忘れ対策にも最適です。">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>どこ置いた？ ― 買い物メモと家計簿のアプリ</title>
+<meta name="description" content="買い物メモと家計簿を、ひとつのアプリで。置き場所の記録や終活の記録もできます。無料・登録不要・データはスマホの中だけ。">
+<meta property="og:title" content="どこ置いた？ ― 買い物メモと家計簿のアプリ">
+<meta property="og:description" content="買い物メモと家計簿を、ひとつのアプリで。無料・登録不要・データはスマホの中だけ。">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://saka321108-prog.github.io/dokoita-site/">
-<meta property="og:image" content="https://saka321108-prog.github.io/dokoita-site/app_icon_512.png">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:site_name" content="DokoOita - どこ置いた？">
-
-<!-- Twitter（X）カード -->
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DokoOita - どこ置いた？｜置き場所・買い物リスト・家計簿・終活記録アプリ">
-<meta name="twitter:description" content="物の置き場所記録・買い物リスト・レシート管理・家計簿・終活記録がひとつにまとまった無料Androidアプリ。シニアの物忘れ対策にも最適です。">
-<meta name="twitter:image" content="https://saka321108-prog.github.io/dokoita-site/app_icon_512.png">
-<style>
-  :root{
-    --main-color:#3a3a6a;
-    --accent:#5b6fd8;
-    --bg-pink:#fff0f5;
-    --bg-light:#ffffff;
-    --bg-soft:#f5f3ff;
-  }
-  body{
-    margin:0;
-    font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;
-    color:#333;
-    background:var(--bg-pink);
-    line-height:1.7;
-  }
-  header{
-    background:linear-gradient(135deg,#3a4f9c,#5b6fd8);
-    color:#fff;
-    padding:24px 16px;
-    text-align:center;
-  }
-  header img.icon{
-    width:90px;
-    height:90px;
-    border-radius:18px;
-    vertical-align:middle;
-    margin-right:14px;
-    border:4px solid #fff;
-    background:#fff;
-  }
-  header h1{
-    display:inline-block;
-    vertical-align:middle;
-    font-size:2.4em;
-    margin:0;
-  }
-  header p.catch{
-    font-size:1.1em;
-    margin:14px 0 6px;
-    font-weight:bold;
-  }
-  header a.store-link{
-    display:inline-block;
-    margin-top:12px;
-    text-decoration:none;
-  }
-  .gp-badge{
-    display:inline-flex;
-    align-items:center;
-    background:#000;
-    border-radius:8px;
-    padding:8px 16px;
-    gap:10px;
-    text-decoration:none;
-  }
-  .gp-badge svg{
-    width:24px;
-    height:24px;
-    flex-shrink:0;
-  }
-  .gp-badge .gp-text{
-    display:flex;
-    flex-direction:column;
-    text-align:left;
-    line-height:1.2;
-  }
-  .gp-badge .gp-sub{
-    color:#fff;
-    font-size:0.7em;
-    font-family:sans-serif;
-  }
-  .gp-badge .gp-main{
-    color:#fff;
-    font-size:1.2em;
-    font-family:sans-serif;
-    font-weight:bold;
-    white-space:nowrap;
-  }
-  main{
-    max-width:1000px;
-    margin:0 auto;
-    padding:16px;
-  }
-  section{
-    background:var(--bg-light);
-    border-radius:16px;
-    padding:20px;
-    margin:24px 0;
-    box-shadow:0 2px 6px rgba(0,0,0,0.08);
-  }
-  section h2{
-    color:var(--main-color);
-    border-left:6px solid var(--accent);
-    padding-left:10px;
-    margin-top:0;
-  }
-  .gallery{
-    display:flex;
-    flex-wrap:wrap;
-    gap:16px;
-    justify-content:flex-start;
-    margin-top:16px;
-  }
-  .gallery figure{
-    flex:1 1 150px;
-    max-width:200px;
-    margin:0;
-    text-align:left;
-  }
-  .gallery img{
-    width:100%;
-    border-radius:10px;
-    border:1px solid #ddd;
-    display:block;
-  }
-  .gallery figcaption{
-    font-size:0.85em;
-    color:#555;
-    margin-top:6px;
-  }
-  .highlight-box{
-    background:var(--bg-soft);
-    border-radius:12px;
-    padding:16px;
-    margin:16px 0;
-  }
-  .alert-text{
-    color:#e63946;
-    font-size:1.4em;
-    font-weight:bold;
-    margin:0 0 8px 0;
-  }
-  footer{
-    background:#2c2c4d;
-    color:#fff;
-    text-align:center;
-    padding:30px 16px;
-    margin-top:40px;
-  }
-  footer h2{
-    color:#fff;
-    border:none;
-  }
-  footer ul{
-    list-style:none;
-    padding:0;
-    display:inline-block;
-    text-align:left;
-  }
-  footer li{
-    margin:6px 0;
-  }
-  footer a.install-link{
-    display:inline-block;
-    margin-top:16px;
-    text-decoration:none;
-  }
-</style>
+<meta property="og:image" content="icon.png">
+<meta name="theme-color" content="#14553a">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="skip" href="#main">本文へ移動</a>
 
-<header>
-  <img class="icon" src="app_icon_512.png" alt="DokoOitaアプリのアイコン">
-  <h1>DokoOita - どこ置いた？</h1>
-  <p class="catch">置き場所＆買い物リスト＆レシート管理＆簡易家計簿＆終活記録</p>
-  <p>大切なものをしまった場所、買い物での購入品メモ、レシートの記録と支出だけの家計簿、そして終活の記録まで。<br>
-  写真とひと言メモで、暮らしの「ちょっと、困ったな？」をまとめて解決します。<br>
-  私達、70歳目前の夫婦が自分達の「生活の困った」から開発したアプリです。</p>
+<div class="wrap">
+  <header class="top">
+    <img src="icon.png" alt="どこ置いた？のアイコン" width="56" height="56">
+    <span class="name">どこ置いた？</span>
+    <nav aria-label="ページ内の移動">
+      <a href="#features">できること</a>
+      <a href="guide.html">操作方法</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </header>
+</div>
 
-  <a class="store-link" href="https://play.google.com/store/apps/details?id=jp.dokoita.android" target="_blank" rel="noopener">
-    <span class="gp-badge">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.76c.3.17.64.24.99.19l13.1-11.95L13.34 8.1 3.18 23.76z" fill="#EA4335"/><path d="M20.47 10.37l-3.15-1.82-4 3.65 4 3.64 3.18-1.84a1.8 1.8 0 0 0 0-3.13z" fill="#FBBC04"/><path d="M3.18.24A1.8 1.8 0 0 0 2.4 1.8v20.4c0 .63.32 1.18.78 1.56L13.34 12 3.18.24z" fill="#4285F4"/><path d="M4.17.05l9.17 11.95 3.93-3.63L4.17.05A1.8 1.8 0 0 0 3.18.24l.99-.19z" fill="#34A853"/></svg>
-      <span class="gp-text">
-        <span class="gp-sub">Google Playで手に入れよう</span>
-        <span class="gp-main">Google Play</span>
-      </span>
-    </span>
-  </a>
-</header>
-
-<main>
-
-  <!-- ===================== 置き場所記録 ===================== -->
-  <section id="oki">
-    <h2>① 置き場所記録</h2>
-    <p>
-      「あれ、どこに置いたっけ・・・」と、探し回った経験はありませんか？私達夫婦も高齢になり、自分達が片づけて「しまい込んだ物」の場所を覚えられず、思い出せず、で、結果、持っているのに再度購入してしまうことが度々ありました。年を重ねて高齢になると記憶との戦いが始まります。</p>
-    <p>
-      ここに「ホットカーペットのコード・APの配電盤とパイプシャフトの鍵・作業用手袋」という3枚の写真があります。これは、数年前から私達が片づけてしまい込んだ状態をスマホで撮影後に簡単な編集をして名前を音声入力して保存した写真です。こうやって写真で記録するようになって以後、見つけられずに購入することはなくなりました。</p>
-    <p>
-      ある時、娘から「アレクサに覚えてもらえばいいのに」と勧められ挑戦してみましたが、記憶させた内容を必要な時に瞬時に思い出せず、うまくいきませんでした。やっぱり「百聞は一見にしかず」で、言葉は写真に勝てません。</p>
-    <p>
-      「重要事項を書き込んだ写真なら詳細を簡単に確認可能」そうです、文字だけ写真だけでは駄目なんです。この【DokoOita - どこ置いた？】は、そんな「困った？」を手助けするアプリです。</p>
-
-    <div class="gallery">
-      <figure>
-        <img src="カメラから登録-3.jpg" alt="カメラで撮影している画面">
-        <figcaption>① まずはカメラで、しまう物を撮影します。</figcaption>
-      </figure>
-      <figure>
-        <img src="カメラから登録-9.jpg" alt="撮影した写真に丸印と文字を書き込んでいる画面">
-        <figcaption>② 必要であれば、写真に文字やマークを付けましょう。</figcaption>
-      </figure>
-      <figure>
-        <img src="カメラから登録-10.jpg" alt="名前の欄に文字が入力されている画面">
-        <figcaption>③ 名前や置き場所を音声入力して登録します。</figcaption>
-      </figure>
-      <figure>
-        <img src="置き場所-1.jpg" alt="登録された置き場所の一覧画面">
-        <figcaption>④ 一覧から目的のアイテムをタップします。</figcaption>
-      </figure>
-      <figure>
-        <img src="置き場所-2.jpg" alt="登録内容の詳細画面">
-        <figcaption>⑤ 写真と一緒に、名前・置き場所・部屋などの詳細が表示されます。</figcaption>
-      </figure>
-      <figure>
-        <img src="置き場所-3.jpg" alt="拡大表示された写真">
-        <figcaption>⑥ 写真をタップすると拡大表示され、詳しく確認できます。</figcaption>
-      </figure>
+<main id="main">
+<div class="wrap">
+  <section class="hero">
+    <div>
+      <h1><span>買い物メモと家計簿を、</span><span>ひとつのアプリで。</span></h1>
+      <p class="lead">よく行くお店の品物を並べて、買う物にチェックするだけで、今日の買い物メモができます。買ったら線で消して、あとから家計簿に残せます。</p>
+      <ul class="facts">
+        <li>無料</li>
+        <li>登録は不要</li>
+        <li>データはスマホの中だけ</li>
+      </ul>
+      <p class="getit"><a class="gp-link" href="https://play.google.com/store/apps/details?id=jp.dokoita.android" rel="noopener"><span class="gp-badge"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.3.17.64.24.99.19l13.1-11.95L13.34 8.1 3.18 23.76z" fill="#EA4335"/><path d="M20.47 10.37l-3.15-1.82-4 3.65 4 3.64 3.18-1.84a1.8 1.8 0 0 0 0-3.13z" fill="#FBBC04"/><path d="M3.18.24A1.8 1.8 0 0 0 2.4 1.8v20.4c0 .63.32 1.18.78 1.56L13.34 12 3.18.24z" fill="#4285F4"/><path d="M4.17.05l9.17 11.95 3.93-3.63L4.17.05A1.8 1.8 0 0 0 3.18.24l.99-.19z" fill="#34A853"/></svg><span class="gp-text"><span class="gp-sub">Google Playで手に入れよう</span><span class="gp-main">Google Play</span></span></span></a></p>
     </div>
 
-    <div class="highlight-box">
-      <p class="alert-text">皆さんも経験ありませんか？</p>
-      <p style="margin:0;">
-        しまい込んだ場所をどうしても思い出せず、仕方なく同じ品物を再度購入してしまったこと。そんな経験のある方は、このアプリ「DokoOita - どこ置いた？」を活用して下さい。
-      </p>
+    <div class="memo" id="memo" aria-label="買い物メモの見本。品物をさわると線で消えます">
+      <h2>今日の買い物メモ（見本）</h2>
+      <ul>
+        <li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="lab">牛乳</span></button></li>
+        <li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="lab">卵</span></button></li>
+        <li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="lab">豆腐</span></button></li>
+        <li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="lab">長ねぎ</span></button></li>
+        <li><button type="button" aria-pressed="false"><span class="box" aria-hidden="true"></span><span class="lab">食パン</span></button></li>
+      </ul>
+      <div class="foot">
+        <span>品物をさわってみてください。アプリでは、右になぞると線で消えます。</span>
+        <button type="button" class="reset" id="reset">もとに戻す</button>
+      </div>
     </div>
   </section>
+</div>
 
-  <!-- ===================== 買い物リスト ===================== -->
-  <section id="shopping">
-    <h2>② 買い物リスト(メモ)</h2>
-    <p>
-      買い物に出かけるとき、購入する商品をメモ書きしていませんか？このアプリを使えば、その手書きのメモは不要になります。登録した商品リストをスワイプしながら、買う予定の物には「今日買う」のチェックを入れます。最後まで選んで「今日買うリスト表示」を選択すると、写真付きの購入品リストが完成します。
-    </p>
-    <p>
-      手書きのメモのように、文字だけで見たい場合は「テキスト表示」ボタンを押せば買い物メモが完成します。お店で買い物かごに入れたら、該当の商品を右にスワイプすると取り消し線が引かれます。間違えた時は左スワイプで戻せます。これまで手書きのメモ書きで線を引いて消していた作業が、スワイプするだけで済みます。
-    </p>
-    <p>
-      リストに登録していない商品は、「追加メモ」に記載して買い物に出掛けましょう。インストール後に買い物リストでは基本素材が既に登録済みなので、あなたが実際に買い物をする店舗名を登録しましょう。一度だけリスト作成すれば、あとは買い物前にホーム画面で店舗名検索して「🛒カートアイコン」を押して下さい。作成された「買い物メモ」が表示されます。
-    </p>
+<section class="story" id="story">
+  <div class="wrap">
+    <h2>開発の経緯</h2>
+    <div class="story-body">
+<p>日々の買い物で「買う物のメモ書き」を作成して持参していませんか？店舗でメモを見ながらカゴに入れたら線を引き・・・ですよね😢</p>
+<p>私達夫婦も70歳目前の高齢者になり、メモ作成が億劫で面倒になり、何とか簡単に出来ないものかと思いこのアプリを開発しました。</p>
+<p>その他「日常の困りごと」をひとつに纏めて解決できればと考え多機能アプリに仕上げました。</p>
+<p>例えば、「あれ、どこに置いたっけ・・・」と、探し回った経験はありませんか？私達夫婦でも自分達が片づけて「しまい込んだ物」の場所を覚えられず、思い出せず、で、結果、持っているのに再度購入してしまうことが度々ありました。年を重ねて高齢になると記憶との戦いが始まります。</p>
+<p>ここに「ホットカーペットのコード・APの配電盤とパイプシャフトの鍵・作業用手袋」という3枚の写真があります。これは、数年前から私達が片づけてしまい込んだ状態をスマホで撮影後に簡単な編集をして名前を音声入力して保存した写真です。こうやって写真で記録するようになって以後、見つけられずに購入することはなくなりました。</p>
+<div class="shots story-photos"><figure class="shot"><img src="images/p1_hot_carpet_cord.png" alt="ホットカーペットのコード" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="ph" hidden><b>写真 P1</b><span>ホットカーペットのコード</span><small>ファイル名：images/p1_hot_carpet_cord.png</small></div></figure><figure class="shot"><img src="images/p2_key.png" alt="APの配電盤とパイプシャフトの鍵" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="ph" hidden><b>写真 P2</b><span>APの配電盤とパイプシャフトの鍵</span><small>ファイル名：images/p2_key.png</small></div></figure><figure class="shot"><img src="images/p3_gloves.png" alt="作業用手袋" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="ph" hidden><b>写真 P3</b><span>作業用手袋</span><small>ファイル名：images/p3_gloves.png</small></div></figure></div>
+<p>ある時、娘から「アレクサに覚えてもらえばいいのに」と勧められ挑戦してみましたが、記憶させた内容を必要な時に瞬時に思い出せず、うまくいきませんでした。やっぱり「百聞は一見にしかず」で、言葉は写真に勝てません。</p>
+<p>「重要事項を書き込んだ写真なら詳細を簡単に確認可能」そうです、文字だけ写真だけでは駄目なんです。この【DokoOita】は、そんな「くらしの困った？」を手助けするアプリです。</p>
+<p>この【DokoOita】アプリをひとりでも多くの皆様にご利用いただき、ご意見を賜れますようお願いする次第です🙏</p>
+</div>
+  </div>
+</section>
 
-    <div class="gallery">
-      <figure>
-        <img src="買い物メモ-1.jpg" alt="商品の詳細画面、今日買うチェックが未選択">
-        <figcaption>① 登録した商品の一覧から、買いたい物を選びます。</figcaption>
-      </figure>
-      <figure>
-        <img src="買い物メモ-2.jpg" alt="今日買うのチェックが入った画面">
-        <figcaption>② 「今日買う」にチェックを入れます。</figcaption>
-      </figure>
-      <figure>
-        <img src="買い物メモ-3.jpg" alt="追加メモを入力するポップアップ画面">
-        <figcaption>③ リスト登録がない商品は「追加メモ」を活用して買い物メモに記載して下さい。</figcaption>
-      </figure>
-      <figure>
-        <img src="買い物メモ-4.jpg" alt="完成した買い物メモ。購入済みの商品に取り消し線が入っている">
-        <figcaption>④ 買い物かごに入れたら、その商品を右スワイプすると取り消し線が引かれます。</figcaption>
-      </figure>
-    </div>
-  </section>
+<section class="band" id="features">
+  <div class="wrap">
+    <h2 class="sec">できること</h2>
 
-  <!-- ===================== 共有・検索機能 ===================== -->
-  <section id="share-search">
-    <h2>③ 家族で共有 ＆ 検索機能</h2>
-    <p>
-      登録した商品の情報は、家族にも簡単に共有できます。共有したい商品を選んで、LINEなどのアプリで送信するだけです。外出中の家族には説明も不要です。きっと買ってきてくれますよ。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="共有送信-1.jpg" alt="共有先のアプリを選ぶ画面、LINEが表示されている">
-        <figcaption>① 共有ボタンをタップする。</figcaption>
-      </figure>
-      <figure>
-        <img src="共有送信-2.jpg" alt="LINEのトーク画面に商品の写真と情報が送信されている">
-        <figcaption>② 「この1件」をタップする。</figcaption>
-      </figure>
-      <figure>
-        <img src="共有送信-3.jpg" alt="LINEで受信した商品写真の拡大表示">
-        <figcaption>③ LINEを選択する。</figcaption>
-      </figure>
-      <figure>
-        <img src="共有送信-4.jpg" alt="登録済み商品の詳細画面">
-        <figcaption>④ 主人のLINEに依頼が届きました。</figcaption>
-      </figure>
-      <figure>
-        <img src="共有送信-5.jpg" alt="共有の対象を選ぶダイアログ">
-        <figcaption>⑤ 主人はLINEタップの拡大表示で内容がひと目で把握できます。</figcaption>
-      </figure>
+    <div class="row">
+      <h3>🛍️ 買い物メモ<small>いちばんよく使われる機能</small></h3>
+      <div>
+        <p>お店ごとに品物を登録しておくと、買い物の日は、お店を選んで、買う物にチェックを入れるだけです。</p>
+        <ul>
+          <li>売り場を回る順番に、品物を並べ替えられます。</li>
+          <li>並び順はお店ごとに覚えるので、次からはワンタッチで同じ順になります。</li>
+          <li>買った物は、右になぞって線で消します。間違えたら、左になぞって戻せます。</li>
+          <li>63品目の基本素材（品物の絵）が入っているので、写真を撮らなくても始められます。</li>
+        </ul>
+      </div>
     </div>
 
-    <p style="margin-top:24px;">
-      登録した商品が増えてくると、欲しい情報を探し出すのも一苦労です。このアプリには、店舗名や商品名で絞り込める検索機能があります。「店舗名＆商品名」のように複数の言葉を組み合わせて検索することもできますし、「店舗名ORもう一つの店舗名」と入力すれば、複数の店舗の商品をまとめて検索することも可能です。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="検索-1.jpg" alt="アルク＆納豆で検索し、1件が表示された画面">
-        <figcaption>例1：「店舗名＆商品名」で検索すると、両方に当てはまる商品だけが表示されます。</figcaption>
-      </figure>
-      <figure>
-        <img src="検索-2.jpg" alt="アルクのみで検索し、52件が表示された画面">
-        <figcaption>例2：店舗名だけで検索すると、その店舗の商品がすべて表示されます。</figcaption>
-      </figure>
-      <figure>
-        <img src="検索-3.jpg" alt="アルクORコスモスで検索し、102件が表示された画面">
-        <figcaption>例3：「店舗名OR別の店舗名」で検索すると、2つの店舗の商品をまとめて表示できます。</figcaption>
-      </figure>
-    </div>
-  </section>
-
-  <!-- ===================== レシートと家計簿 ===================== -->
-  <section id="kakeibo">
-    <h2>④ レシートと家計簿</h2>
-    <p>
-      お買い物のあとは、レシートを写真に撮るだけで家計簿に記録できます。登録方法は2種類あります。AIによる自動解析を使うと、店舗名・商品名・価格をAIが自動で読み取り、入力までしてくれます。手動入力を選んだ場合は、店舗名・商品名・価格を音声入力して登録します。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="レシートと家計簿-1.jpg" alt="レシートをカメラで撮影する画面">
-        <figcaption>① レシートから一括登録をタップする。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-2.jpg" alt="AIが解析中であることを示す画面">
-        <figcaption>② AI解析をタップする。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-3.jpg" alt="解析結果を確認する画面">
-        <figcaption>③ カメラでレシート撮影する。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-4.jpg" alt="家計簿に登録しますかと尋ねるポップアップ">
-        <figcaption>④ AIが内容を解析している間、少し待ちます。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-5.jpg" alt="家計簿入力画面、種別と支払額が表示されている">
-        <figcaption>⑤ 各内容を確認し、必要に応じて修正して登録します。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-6.jpg" alt="簡易家計簿のメニュー画面">
-        <figcaption>⑥ レシートからデータ引き継ぎで家計簿登録します。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-7.jpg" alt="登録方法を選ぶ画面、AI解析と手動入力の選択肢">
-        <figcaption>⑦ 種別と分類を入力して登録完了。</figcaption>
-      </figure>
+    <div class="row">
+      <h3>📒 家計簿<small>支出も収入も、かんたんに</small></h3>
+      <div>
+        <p>支払先・日付・種別・金額を入れるだけで、1件ずつ記録できます。「簡単モード」は支出だけ、「多機能モード」は収入も記録します。</p>
+        <ul>
+          <li>レシートを撮ると、AIが店名・品名・金額を読み取ります（読み取りは任意の機能です）。</li>
+          <li>期間を決めて、支出や収入を集計できます。画面の上には、今月の合計が出ます。</li>
+          <li>種別や分類は、自分の使いやすい言葉に直せます。</li>
+          <li>家計簿やレシートは、CSVやPDFで保存・共有できます。</li>
+        </ul>
+        <table class="ledger">
+          <caption>今月の収支（表示例）</caption>
+          <tr><th scope="row">収入</th><td><span class="coin">¥</span>250,000円</td></tr>
+          <tr><th scope="row">支出</th><td><span class="coin">¥</span>182,400円</td></tr>
+          <tr><th scope="row">差し引き</th><td><span class="coin">¥</span>67,600円</td></tr>
+        </table>
+      </div>
     </div>
 
-    <h2 style="margin-top:36px;">⑤ レシートと家計簿の集計</h2>
-    <p style="margin-top:16px;">
-      毎回の買い物でレシートを読み込むだけで、家計簿のデータがどんどん蓄積されます。集めたデータは、店舗別・日付別・曜日別など、さまざまな切り口で集計できます。たとえば「アルクで先週いくら使ったか」や「りんごを何回買ったか」なども、簡単な絞り込みで確認できます。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="レシートと家計簿-8.jpg" alt="レシート集計で店舗名にアルクを指定した画面">
-        <figcaption>① 出力方法を選択します。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-9.jpg" alt="品名にりんごを指定した画面">
-        <figcaption>② レシートの店舗別の出力。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-10.jpg" alt="りんごの購入履歴、2回分が表示されている">
-        <figcaption>③ レシートの日付別の出力。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-11.jpg" alt="家計簿集計で支払先にアルクを指定した画面">
-        <figcaption>④ レシートの曜日別の出力。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-12.jpg" alt="家計簿の集計結果、支払総額が表示されている">
-        <figcaption>⑤ レシートの店舗名をアルクで指定する。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-13.jpg" alt="出力方法を選択する画面">
-        <figcaption>⑥ さらに、レシートの品名をりんごで指定する。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-14.jpg" alt="店舗別の集計結果、アルクの支払総額が表示されている">
-        <figcaption>⑦ 店舗が「アルク」で品名が「りんご」のレシートの購入だけが表示されます。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-15.jpg" alt="日付別の集計結果">
-        <figcaption>⑧ 店舗名「アルク」の家計簿集計を指定する。</figcaption>
-      </figure>
-      <figure>
-        <img src="レシートと家計簿-16.jpg" alt="曜日別の集計結果">
-        <figcaption>⑨ 店舗名「アルク」での利用金額が日付別に集計表示されます。</figcaption>
-      </figure>
+    <div class="row">
+      <h3>📍 置き場所<small>しまい込んだ物を探せる</small></h3>
+      <div>
+        <p>しまい込んだ物の場所を、写真や動画で記録します。名前・置き場所・部屋・メモを入れておけば、あとで言葉で探せます。</p>
+      </div>
     </div>
 
-    <p style="margin-top:16px;">
-      このほかにも、いろいろな組み合わせで検索・集計が可能です。家計簿を続けるのが
-      苦手な方にも、AI判定を利用すればレシート写真を撮るだけで続けられる仕組みになっています。
-    </p>
-  </section>
-
-  <!-- ===================== 終活記録 ===================== -->
-  <section id="syukatsu">
-    <h2>⑥ 終活記録</h2>
-    <p>
-      DokoOitaは、ものの置き場所や買い物の記録だけでなく、「終活」の記録にも使うことができます。大切な人への伝言や、財産・資産に関する情報を、写真や動画とともに残しておけます。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="終活-1.jpg" alt="終活記録の一覧画面、宛名ごとに登録されている">
-        <figcaption>① 「妻へ」「長女へ」のように、宛名ごとに記録を一覧で確認できます。</figcaption>
-      </figure>
-      <figure>
-        <img src="終活-2.jpg" alt="妻への記録の詳細画面">
-        <figcaption>② それぞれの記録には、宛名・品名・資産の種類などを登録できます。</figcaption>
-      </figure>
-      <figure>
-        <img src="終活-3.jpg" alt="拡大表示された写真と伝言文">
-        <figcaption>③ 写真を拡大すると、家族への伝言メッセージも一緒に表示されます。</figcaption>
-      </figure>
-      <figure>
-        <img src="終活-4.jpg" alt="お仏壇を動画で撮影している画面">
-        <figcaption>④ 写真だけでなく、動画でも記録を残すことができます。</figcaption>
-      </figure>
-      <figure>
-        <img src="終活-5.jpg" alt="登録された動画を再生する画面">
-        <figcaption>⑤ 登録した動画は、いつでも再生して確認できます。</figcaption>
-      </figure>
+    <div class="row">
+      <h3>🕊️ 終活<small>大切なことを、家族のために</small></h3>
+      <div>
+        <p>大切な物や、家族に伝えたいことを記録します。宛名・品名・資産の種類・伝言を残せます。使い方は「置き場所」と同じです。</p>
+      </div>
     </div>
+  </div>
+</section>
 
-    <p>
-      LINEへの共有機能を使えば、記録した内容を家族にそのまま送ることもできます。もしものときに備えて、大切な情報を整理しておきたい方にもおすすめです。
-    </p>
-  </section>
+<section class="band tint" id="howto">
+  <div class="wrap">
+    <h2 class="sec">買い物メモの使い方</h2>
+    <ol class="steps">
+      <li><b>お店の名前を登録する</b>はじめて開いたときに、よく行くお店の名前を登録します。写真は要りません。</li>
+      <li><b>品物を登録する</b>「写真なしで登録」か、カメラ・ギャラリーで登録します。</li>
+      <li><b>買い物メモを作る</b>ホームの「買い物メモ作成」を押して、お店を選び、買う物にチェックを入れます。</li>
+      <li><b>売り場の順に並べ替える</b>品物の右はしの「≡」を押したまま、上や下へ動かします。「⋮」から「並び順を記憶」を選ぶと、次からも同じ順になります。</li>
+      <li><b>買ったら線で消す</b>右になぞると線で消えます。買い物が終わったら、いちばん下の「全部を取消し」で、チェックをすべて消せます。</li>
+    </ol>
+    <p>アプリの中にも、詳しい「操作方法」があります（設定の「操作方法」）。画面の写真つきで、くわしく知りたいときは、こちらをご覧ください。</p>
+    <p><a class="btn" href="guide.html">写真つきの操作方法を見る</a></p>
+  </div>
+</section>
 
-  <!-- ===================== 設定画面 ===================== -->
-  <section id="settings">
-    <h2>⑦ 設定画面</h2>
-    <p>
-      「設定」画面では、アプリの使い方やデータの管理に関する機能をまとめて確認・操作できます。困ったときも、ここから必要な情報にすぐアクセスできます。
-    </p>
-
-    <div class="gallery">
-      <figure>
-        <img src="設定画面-1.jpg" alt="設定画面、利用目的とホーム画面のデータ表示件数を選ぶ画面">
-        <figcaption>① 利用目的と表示件数を選択する。</figcaption>
-      </figure>
-      <figure>
-        <img src="設定画面-2.jpg" alt="アプリの概要・操作方法・活用方法・項目一括編集などのメニュー画面">
-        <figcaption>② アプリの概要や操作方法などの確認及び項目一括編集等の操作が可能です。</figcaption>
-      </figure>
-      <figure>
-        <img src="設定画面-3.jpg" alt="非表示リストの画面、登録件数15件">
-        <figcaption>③ 買い物リストでの「季節商品」など、暫くは購入しない商品を非表示にしたリストです。ここから再表示させることが可能です。</figcaption>
-      </figure>
-      <figure>
-        <img src="設定画面-4.jpg" alt="データ出力画面、PDF/CSV出力やZIPエクスポート・インポートのボタン">
-        <figcaption>④ 利用目的別のデータを［PDF/CSV］や［ZIP］で保存できます。また、既に保存済みの［ZIP］をインポートで復元したり、買い物リストの基本素材もインポートすることが可能です。</figcaption>
-      </figure>
-      <figure>
-        <img src="設定画面-5.jpg" alt="全データの一括完全削除の確認画面">
-        <figcaption>⑤ 登録した全データを一括で削除することが可能です。過去にバックアップしたデータも保存場所を変更していなければ削除され復元は出来ません。</figcaption>
-      </figure>
+<section class="band" id="safe">
+  <div class="wrap">
+    <h2 class="sec">安心して使うために</h2>
+    <div class="row">
+      <h3>データの置き場所</h3>
+      <div>
+        <p>登録した内容は、あなたのスマホの中に入ります。アカウントの登録は要らず、開発者のサーバーには送りません。機種変更のときは、ZIPで書き出して、新しいスマホで読み込めます。ときどき「保存」でバックアップを取っておくと安心です。</p>
+      </div>
     </div>
-  </section>
+    <div class="row">
+      <h3>広告について</h3>
+      <div>
+        <p>このアプリは無料です。開発費と毎月の維持管理費を、広告収入でまかなっています。インストールして7日がすぎると、画面を切り替えるときに、6時間に1回だけ広告が出ます。</p>
+      </div>
+    </div>
+    <div class="row">
+      <h3>AIでレシートを読み取るとき</h3>
+      <div>
+        <p>この機能は、使いたい人だけが使います。ご自分で用意したキーを登録すると、撮ったレシートの画像が、選んだAIサービス（AnthropicまたはGoogle Gemini）に送られて、文字として読み取られます。登録しなければ、画像は送られません。</p>
+      </div>
+    </div>
+    <p>くわしくは<a href="privacy.html">プライバシーポリシー</a>をご覧ください。</p>
+  </div>
+</section>
 
-<footer>
-  <h2>無料アプリ / Androidスマホ専用</h2>
-  <p>こんな方に最適です！</p>
-  <ul>
-    <li>・ 物忘れが増えてきたと感じる方</li>
-    <li>・ 買い物や家計管理を効率化したい方</li>
-    <li>・ 店舗ごとの価格を比較したい節約家の方</li>
-    <li>・ 終活を始めたい方</li>
-  </ul>
-  <br>
-  <a class="install-link" href="https://play.google.com/store/apps/details?id=jp.dokoita.android" target="_blank" rel="noopener">
-    <span class="gp-badge" style="padding:10px 20px;gap:12px;">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="width:30px;height:30px;"><path d="M3.18 23.76c.3.17.64.24.99.19l13.1-11.95L13.34 8.1 3.18 23.76z" fill="#EA4335"/><path d="M20.47 10.37l-3.15-1.82-4 3.65 4 3.64 3.18-1.84a1.8 1.8 0 0 0 0-3.13z" fill="#FBBC04"/><path d="M3.18.24A1.8 1.8 0 0 0 2.4 1.8v20.4c0 .63.32 1.18.78 1.56L13.34 12 3.18.24z" fill="#4285F4"/><path d="M4.17.05l9.17 11.95 3.93-3.63L4.17.05A1.8 1.8 0 0 0 3.18.24l.99-.19z" fill="#34A853"/></svg>
-      <span class="gp-text">
-        <span class="gp-sub" style="font-size:0.75em;">Google Playで手に入れよう</span>
-        <span class="gp-main" style="font-size:1.4em;">Google Play</span>
-      </span>
-    </span>
-  </a>
-  <p style="margin-top:24px;">
-    お問い合わせ：<a href="mailto:dokooita@gmail.com" style="color:#ffd166;">dokooita@gmail.com</a>
-  </p>
-</footer>
+<section class="band tint" id="faq">
+  <div class="wrap">
+    <h2 class="sec">よくある質問</h2>
+    <details>
+      <summary>本当に無料ですか？</summary>
+      <p>はい、無料です。広告が出ます（上の「広告について」をご覧ください）。</p>
+    </details>
+    <details>
+      <summary>機種変更のとき、データは引き継げますか？</summary>
+      <p>引き継げます。設定の「データ出力」で「ZIPエクスポート（画像込み）」を行い、新しいスマホで「ZIPインポート」をしてください。買い物メモの並び順も引き継がれます。ただし、動画はZIPに入りません。動画は、スマホの動画フォルダ（Movies）の「DokoOita」にあるので、別に移してください。</p>
+    </details>
+    <details>
+      <summary>家計簿だけ使えますか？</summary>
+      <p>使えます。使わないタブは、設定の「表示するタブ」で隠せます。</p>
+    </details>
+    <details>
+      <summary>どの言語で使えますか？</summary>
+      <p>アプリは、日本語・英語・韓国語・中国語（簡体字・繁体字）に対応しています。このホームページは日本語です。お使いのブラウザの翻訳機能で、ほかの言語でも読めます。</p>
+    </details>
+    <details>
+      <summary>AIの読み取りは、必ず使わないといけませんか？</summary>
+      <p>いいえ。レシートの内容は、手で入れることもできます。</p>
+    </details>
+  </div>
+</section>
 
+<section class="band" id="contact">
+  <div class="wrap">
+    <h2 class="sec">お問い合わせ</h2>
+    <p>ご意見・ご要望・不具合のご連絡は、メールでお願いします。</p>
+    <p><a class="btn" href="mailto:dokooita@gmail.com?subject=%E3%81%A9%E3%81%93%E7%BD%AE%E3%81%84%E3%81%9F%EF%BC%9F%E3%81%B8%E3%81%AE%E3%81%94%E6%84%8F%E8%A6%8B">メールを送る</a></p>
+  </div>
+</section>
+</main>
+
+<div class="wrap">
+  <footer>
+    <a href="guide.html">操作方法</a>
+    <a href="https://play.google.com/store/apps/details?id=jp.dokoita.android" rel="noopener">Google Play</a>
+    <a href="privacy.html">プライバシーポリシー</a>
+    <span>© 2026 どこ置いた？</span>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var memo = document.getElementById('memo');
+  if (!memo) return;
+  var items = memo.querySelectorAll('li button');
+  function set(btn, on) { btn.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  items.forEach(function (b) {
+    b.addEventListener('click', function () {
+      set(b, b.getAttribute('aria-pressed') !== 'true');
+      touched = true;
+    });
+  });
+  document.getElementById('reset').addEventListener('click', function () {
+    items.forEach(function (b) { set(b, false); });
+    touched = true;
+  });
+  // ページを開いて少しすると、見本の上の2つが線で消える（さわったら止める）
+  var touched = false;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    setTimeout(function () { if (!touched) set(items[0], true); }, 1100);
+    setTimeout(function () { if (!touched) set(items[1], true); }, 1800);
+  }
+})();
+</script>
 </body>
 </html>
