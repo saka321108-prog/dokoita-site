@@ -1,131 +1,626 @@
-<!doctype html>
-<html lang="ja">
+<!DOCTYPE html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>プライバシーポリシー ― DokoOita（どこ置いた？）</title>
-<meta name="description" content="DokoOita（どこ置いた？）のプライバシーポリシー。登録データの扱い、権限、広告、AIレシート読み取りについて。">
-<meta name="theme-color" content="#14553a">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy – DokoOita</title>
+<meta name="description" content="DokoOita Privacy Policy (English / 日本語 / 한국어 / 简体中文 / 繁體中文)">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap">
-<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1f6b4f;--green-d:#14503a;--bg:#f4fbf8;--ink:#1d2b25;--line:#cfe3da;--card:#ffffff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Apple SD Gothic Neo","Malgun Gothic","PingFang SC","Microsoft YaHei","PingFang TC","Microsoft JhengHei","Noto Sans CJK JP","Noto Sans",sans-serif;line-height:1.85;font-size:16px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 56px}
+header.top{background:var(--green);color:#fff}
+header.top .in{max-width:820px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+header.top img{width:40px;height:40px;border-radius:9px;background:#fff}
+header.top .name{font-weight:700;font-size:1.15rem;letter-spacing:.02em}
+nav.langs{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.langs .in{max-width:820px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px}
+nav.langs button{font:inherit;font-size:.95rem;border:1.5px solid var(--green);background:#fff;color:var(--green-d);border-radius:999px;padding:6px 16px;cursor:pointer;min-height:40px}
+nav.langs button[aria-pressed="true"]{background:var(--green);color:#fff}
+nav.langs button:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.policy{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:20px;padding:8px 22px 26px}
+.policy h1{font-size:1.5rem;line-height:1.4;color:var(--green-d);margin:.9em 0 .2em;padding-bottom:.35em;border-bottom:3px solid var(--green)}
+.policy h2{font-size:1.12rem;line-height:1.5;color:var(--green-d);margin:1.9em 0 .4em;padding-left:.6em;border-left:5px solid var(--green)}
+.policy h3{font-size:1rem;margin:1.2em 0 .2em;color:var(--green-d)}
+.policy p{margin:.55em 0}
+.policy p.date{color:#51665c;font-size:.93rem}
+.policy ul{margin:.4em 0 .6em;padding-left:1.4em}
+.policy li{margin:.3em 0}
+.policy a{color:#0b5cad;word-break:break-all}
+footer{max-width:820px;margin:26px auto 0;padding:0 16px;color:#51665c;font-size:.85rem}
+@media (max-width:480px){.policy{padding:4px 14px 20px}.policy h1{font-size:1.3rem}}
+noscript .policy{display:block}
+</style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <img src="icon.png" alt="どこ置いた？ icon" width="56" height="56">
-    <a class="name" href="index.html" style="text-decoration:none">どこ置いた？</a>
-  </header>
-  <main class="doc">
-    <p style="text-align:right;margin:0 0 .5em"><a href="privacy-en.html">English</a></p>
-    <h1>プライバシーポリシー</h1>
-    <p class="date">最終更新日：2026年10月19日　／　アプリ名：DokoOita（どこ置いた？）</p>
-    <p>このプライバシーポリシーは、Android向けアプリ「DokoOita（どこ置いた？）」（以下「本アプリ」）で、開発者（以下「私たち」）が利用者の情報をどのように扱うかを説明するものです。</p>
-
-    <h2>1. 本アプリが扱う情報</h2>
-    <p>本アプリが扱う情報は、次のとおりです。</p>
-    <p><strong>【利用者が入力する情報】</strong></p>
-    <ul>
-      <li>写真（カメラで撮ったもの、またはギャラリーから選んだもの）</li>
-      <li>動画（本アプリのカメラで撮ったもの。音声を含みます）</li>
-      <li>音声入力や手入力で入れた文字</li>
-      <li>日付・金額・数量などの数字</li>
-      <li>AIによるレシート読み取りに使うAPIキー（利用者が自分で入力したもの）</li>
-    </ul>
-    <p><strong>【自動的に扱われる情報】</strong></p>
-    <ul>
-      <li>広告の表示に関する情報（「4. 広告について」をご覧ください）</li>
-    </ul>
-    <p>私たちは、氏名・住所・電話番号・位置情報などを、本アプリで集めることはありません。アカウントの登録も要りません。</p>
-
-    <h2>2. 登録したデータの保存場所</h2>
-    <p>本アプリで登録した内容（写真・動画・文字・家計簿・レシート・買い物メモ・終活記録など）は、利用者のスマートフォンの中だけに保存されます。これらのデータを、私たちのサーバーに送ることはありません。私たちは、利用者の登録データを受け取ることも、保管することもありません。</p>
-    <p>ご利用のスマートフォンのバックアップの設定によっては、Androidの仕組み（Googleのバックアップなど）で、アプリのデータが利用者のGoogleアカウントに保存されることがあります。これは利用者の端末の設定によるもので、私たちが受け取るものではありません。</p>
-
-    <h2>3. 本アプリが使う権限</h2>
-    <ul>
-      <li>カメラ：写真や動画を撮るために使います。</li>
-      <li>マイク：動画を撮るときの音を録るために使います。</li>
-      <li>通信（インターネット）：AIによるレシートの読み取り（任意）と、広告の表示に使います。</li>
-      <li>広告ID：広告の表示のために使います（「4. 広告について」をご覧ください）。</li>
-      <li>保存場所への書き込み：Android 9以前のスマートフォンで、「Download」や「Pictures」などへ保存するために使います。</li>
-    </ul>
-    <p>音声入力は、本アプリの機能ではなく、お使いのスマートフォンのキーボード（OSの音声認識）の機能を使います。このため、本アプリがマイクで音声を録って送ることはありません。音声の扱いは、OSやキーボードの提供元（Googleや端末メーカーなど）のポリシーに従います。</p>
-
-    <h2>4. 広告について</h2>
-    <p>本アプリは、広告の表示に Google AdMob を使っています。広告の表示のために、Googleが次のような情報を取得することがあります。</p>
-    <ul>
-      <li>広告ID（Android広告ID）</li>
-      <li>端末の種類・OSのバージョン</li>
-      <li>おおよその位置（IPアドレスをもとにしたもの）</li>
-      <li>アプリの利用状況、診断情報</li>
-    </ul>
-    <p>広告は、インストールから7日がすぎたあと、画面を切り替えるときに、6時間に1回までの間隔で表示されます。</p>
-    <p>欧州経済領域（EEA）、英国などでは、広告を出す前に、同意の確認画面（Googleのメッセージ機能）が表示されます。同意の内容は、あとから変えられます。</p>
-    <p>広告のパーソナライズは、スマートフォンの「設定」→「Google」→「広告」から、やめることができます。広告IDも、同じ画面からリセットできます。Googleの情報の扱いは、<a href="https://policies.google.com/privacy">Googleのプライバシーポリシー</a>と、<a href="https://policies.google.com/technologies/partner-sites">広告を使うサイト・アプリでの情報の扱い</a>をご覧ください。</p>
-
-    <h2>5. AIによるレシートの読み取り（任意）</h2>
-    <p>「レシートから一括登録」には、AIで読み取る機能があります。この機能は任意です。使うときは、利用者が次のどちらかのサービスを選び、自分で用意したAPIキー（各サービスから発行される利用のためのキー）を本アプリに入力します。</p>
-    <ul>
-      <li>Anthropic（Claude）</li>
-      <li>Google（Gemini API）</li>
-    </ul>
-    <p>利用者が「AI読み取り」を選んでレシートを撮ると、撮った画像が、利用者のスマートフォンから、選んだサービスのサーバーへ直接送られます。サービスは、店舗名・日付・品名・金額を読み取り、結果を本アプリへ返します。</p>
-    <ul>
-      <li>AI読み取りは、利用者が自分で選んだときだけ動きます。</li>
-      <li>「手入力」を選んだときは、画像は外部へ送られません。</li>
-      <li>画像は、私たちのサーバーを通りません。私たちは、送られた画像を受け取りも、保管もしません。</li>
-      <li>APIキーは、スマートフォンの中だけに保存され、選んだサービスとの認証にだけ使われます。ZIPなどの書き出しファイルには含まれません。</li>
-      <li>利用者のアカウントとAPIキーには、選んだサービスの規約が適用されます（年齢などの条件がある場合があります）。送った画像の扱いは、そのサービスの規約とプライバシーポリシーに従います。</li>
-    </ul>
-    <p><strong>【Google（Gemini API）を使うときの大切なお知らせ】</strong></p>
-    <p>Googleの規約によると、Gemini APIを無料枠（請求先アカウントを設定しない使い方）で使うと、送った内容（レシートの画像など）が、Googleの製品の改善に使われ、人が内容を読むことがあります。請求先アカウントを設定した有料の利用では、この扱いにはなりません。また、欧州経済領域（EEA）・スイス・英国では、無料枠も含めて、有料サービスの条件が適用されると、Googleの規約に書かれています。レシートには買い物の情報が含まれます。サービスを選ぶときにこのことをご確認いただくか、「手入力」をご利用ください。</p>
-    <p>各サービスの規約・プライバシーポリシー：</p>
-    <ul>
-      <li><a href="https://www.anthropic.com/legal/privacy">Anthropic プライバシーポリシー</a></li>
-      <li><a href="https://ai.google.dev/gemini-api/terms">Google Gemini API 追加利用規約</a></li>
-      <li><a href="https://policies.google.com/privacy">Google プライバシーポリシー</a></li>
-    </ul>
-
-    <h2>6. データの書き出しと共有</h2>
-    <p>本アプリには、データを外へ出す機能があります。</p>
-    <ul>
-      <li>PDF・CSVの書き出し（Download/Kakeibo などに保存されます）</li>
-      <li>ZIPの書き出し（写真を含みます。Download/DokoOita に保存されます）</li>
-      <li>写真・動画の保存（Pictures/DokoOita、Movies/DokoOita に保存されます）</li>
-      <li>LINE・メールなどのアプリへの共有</li>
-    </ul>
-    <p>これらは、利用者が自分で操作したときだけ行われます。保存先は、スマートフォンの共有フォルダなので、ほかのアプリや利用者が見られる場合があります。共有先での情報の扱いは、利用者と、共有先のサービスの責任になります。</p>
-
-    <h2>7. 情報を第三者に渡すこと</h2>
-    <p>法令に基づく場合を除いて、私たちが利用者の情報を第三者に渡すことはありません。ただし、上に書いたとおり、広告の表示のために Google に、AI読み取りを使ったときに利用者が選んだサービス（Anthropic または Google）に、必要な情報が送られます。</p>
-
-    <h2>8. お子さまについて</h2>
-    <p>本アプリは、特定の年齢の方だけを対象にしたものではありません。私たちは、13歳未満のお子さまの個人情報を、知りながら集めることはありません。</p>
-
-    <h2>9. 安全のために</h2>
-    <p>本アプリのデータは、スマートフォンの中に保存されます。そのため、スマートフォン自体の管理（画面ロック、OSを新しくしておくことなど）が、いちばん大切です。</p>
-
-    <h2>10. データの削除</h2>
-    <p>本アプリの設定から、登録したデータをすべて削除できます。また、アプリを削除（アンインストール）すると、スマートフォンの中のアプリのデータも消えます。AI読み取りで送った画像は、各サービスの規約に従って扱われるため、削除については各サービスにご確認ください。</p>
-    <p>「6. データの書き出しと共有」で書き出したファイルは、スマートフォンの共有フォルダに残ります。必要がなくなったら、利用者ご自身で削除してください。</p>
-
-    <h2>11. このポリシーの変更</h2>
-    <p>必要に応じて、このポリシーを書きかえることがあります。変えたときは、このページに載せ、「最終更新日」を書きかえます。</p>
-
-    <h2>12. お問い合わせ</h2>
-    <p>このポリシーや本アプリについてのご質問は、次の連絡先へお寄せください。</p>
-    <ul>
-      <li>アプリ名：DokoOita（どこ置いた？）</li>
-      <li>パッケージ名：jp.dokoita.android</li>
-      <li>連絡先：<a href="mailto:dokooita@gmail.com">dokooita@gmail.com</a></li>
-      <li>開発者：Google Playのストアページに表示されている開発者</li>
-    </ul>
-
-    <p style="margin-top:2em"><a href="index.html">ホームページへ戻る</a></p>
-  </main>
-</div>
+<header class="top"><div class="in"><img src="icon.png" alt="" width="40" height="40"><span class="name">DokoOita</span></div></header>
+<nav class="langs" aria-label="Language"><div class="in"><button type="button" data-lang="en" lang="en">English</button><button type="button" data-lang="ja" lang="ja">日本語</button><button type="button" data-lang="ko" lang="ko">한국어</button><button type="button" data-lang="zh-Hans" lang="zh-Hans">简体中文</button><button type="button" data-lang="zh-Hant" lang="zh-Hant">繁體中文</button></div></nav>
+<main class="wrap">
+<section id="en" lang="en" class="policy" hidden>
+<h1>Privacy Policy – DokoOita</h1>
+<p class="date">Effective: October 19, 2026 (updated October 23, 2026 to include the iPhone version)</p>
+<p>This Privacy Policy explains how the developer ("we", "us", or "our") handles user information in the application "DokoOita" (the "App") for Android and iPhone.</p>
+<h2>1. Information the App Handles</h2>
+<p>The App handles the following information.</p>
+<h3>Information entered by the user</h3>
+<ul>
+<li>Photos (taken with the camera, or selected from the gallery on Android / the Photos library on iPhone)</li>
+<li>Videos (recorded with the App's camera, including sound)</li>
+<li>Text entered by voice input or manually</li>
+<li>Numerical data such as dates, prices and quantities</li>
+<li>An API key for AI receipt reading (entered by the user)</li>
+</ul>
+<h3>Information handled automatically</h3>
+<ul>
+<li>Information related to ad delivery (see "4. Advertising")</li>
+</ul>
+<p>We do not collect names, addresses, phone numbers, location, or similar information through the App. No account is required.</p>
+<h2>2. Where Your Data Is Stored</h2>
+<p>Everything you enter in the App (photos, videos, text, budget entries, receipts, shopping memos, end-of-life records, and so on) is stored only on your device. We do not send this data to our servers, and we do not receive or keep it.</p>
+<p>On Android, depending on your device's backup settings, Android's own mechanisms (such as Google backup) may save app data to your Google account. On iPhone, if you use iCloud Backup or a computer backup of your iPhone, the App's data may be included in it. These depend on your own settings and are handled by Google or Apple; we do not receive them and cannot see them.</p>
+<h2>3. Permissions the App Uses</h2>
+<h3>Android</h3>
+<ul>
+<li>Camera: to take photos and record videos</li>
+<li>Microphone: to record sound when recording videos</li>
+<li>Internet: for ad delivery and the optional AI receipt reading</li>
+<li>Advertising ID: for ad delivery (see "4. Advertising")</li>
+<li>Write to storage: on Android 9 and earlier only, to save files to folders such as Download and Pictures</li>
+</ul>
+<h3>iPhone</h3>
+<ul>
+<li>Camera: to take photos and record videos</li>
+<li>Microphone: to record sound when recording videos</li>
+<li>Photos: to let you choose photos from your Photos library, and to save photos to the Photos app (for saving, the App asks only for permission to add photos)</li>
+<li>Tracking (App Tracking Transparency): before the first ad is shown, the App asks whether you allow it to track you across apps and websites owned by other companies. If you allow it, your Advertising Identifier (IDFA) may be used for ad delivery. The App works the same if you do not allow it. You can change your choice at any time in "Settings" &gt; "Privacy &amp; Security" &gt; "Tracking"</li>
+<li>Internet: for ad delivery and the optional AI receipt reading</li>
+<li>Files app: files you save or export are stored in the App's folder, which you can see in the Files app (On My iPhone &gt; DokoOita)</li>
+</ul>
+<p>The App does not use your location or contacts.</p>
+<p>Voice input is a function of your phone's keyboard (the OS speech recognition), not of the App. The App itself does not record or send your voice for voice input. Voice data is handled according to the policy of the provider of your OS and keyboard (Google, Apple, the device manufacturer, etc.).</p>
+<h2>4. Advertising</h2>
+<p>The App uses Google AdMob to show ads. For this purpose, Google may collect information such as:</p>
+<ul>
+<li>Advertising ID (Android Advertising ID), or on iPhone the Advertising Identifier (IDFA), only if you allow tracking</li>
+<li>IP address (approximate location is estimated from it)</li>
+<li>Device type and OS version</li>
+<li>App usage and diagnostic information (such as crash logs and performance data)</li>
+</ul>
+<p>Ads are shown, starting 7 days after installation, when you switch screens, at most once every 6 hours.</p>
+<p>In the European Economic Area (EEA), the United Kingdom and some other regions, a consent screen (Google's messaging tool) is shown before ads. You can change your choice later.</p>
+<p>On Android, you can turn off ad personalization and reset your advertising ID in your device's "Settings" &gt; "Google" &gt; "Ads". On iPhone, you can turn off tracking for this App in "Settings" &gt; "Privacy &amp; Security" &gt; "Tracking". For how Google handles information, see Google Privacy Policy (<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>) and How Google uses information from sites or apps that use its services (<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a>).</p>
+<h2>5. AI Receipt Reading (Optional)</h2>
+<p>"Register from receipts" offers an optional AI reading feature. To use it, you choose one of the following services and enter your own API key (a key you obtain from the service provider) in the App:</p>
+<ul>
+<li>Anthropic (Claude)</li>
+<li>Google (Gemini API)</li>
+</ul>
+<p>When you choose "AI reading" and take a photo of a receipt, the image is sent directly from your device to the server of the service you chose. The service reads the store name, date, item names and prices and returns them to the App.</p>
+<ul>
+<li>AI reading runs only when you choose it.</li>
+<li>If you choose manual entry, no image is sent outside the App.</li>
+<li>The image does not pass through our servers. We do not receive or keep the image.</li>
+<li>Your API key is stored only on your device and is used only to authenticate with the service you chose. It is not included in export files such as ZIP.</li>
+<li>Your account and API key are subject to the terms of the service you chose (which may set age or other requirements). How the image is handled is determined by that service's terms and privacy policy.</li>
+</ul>
+<h3>Important note when using Google (Gemini API)</h3>
+<p>According to Google's terms, when the Gemini API is used under the free tier (without a billing account), the content sent (such as receipt images) may be used by Google to improve its products, and human reviewers may read it. This does not apply to paid use with a billing account. According to Google's terms, for users in the European Economic Area, Switzerland and the United Kingdom, the terms for paid use apply to all use, including the free quota. Because receipts contain shopping information, please take this into account when choosing a service, or use manual entry instead.</p>
+<p>Terms and privacy policies of the services:</p>
+<ul>
+<li>Anthropic Privacy Policy (<a href="https://www.anthropic.com/legal/privacy" rel="noopener">https://www.anthropic.com/legal/privacy</a>)</li>
+<li>Google Gemini API Additional Terms (<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a>)</li>
+<li>Google Privacy Policy (<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>)</li>
+</ul>
+<h2>6. Exporting and Sharing Data</h2>
+<p>The App has functions that let you take data out of the App:</p>
+<ul>
+<li>PDF and CSV export</li>
+<li>ZIP export, including photos</li>
+<li>Saving photos and videos</li>
+<li>Sharing via apps such as LINE and email</li>
+</ul>
+<p>These happen only when you start them.</p>
+<p>On Android, files are saved in folders such as Download/Kakeibo, Download/DokoOita, Pictures/DokoOita and Movies/DokoOita. Because these are shared folders on your phone, other apps or people with access to your phone may be able to see them.</p>
+<p>On iPhone, files are saved in the App's folder, which you can see in the Files app (On My iPhone &gt; DokoOita): "data" for ZIP files and other data, "Movies" for videos, and "Kakeibo" for PDF and CSV files. Photos are saved to an album in the Photos app. People with access to your iPhone, and apps you allow to use the Photos library, may be able to see them.</p>
+<p>What happens to data after sharing is the responsibility of you and the receiving service.</p>
+<h2>7. Disclosure to Third Parties</h2>
+<p>Except as required by law, we do not disclose user information to third parties. However, as described above, necessary information is sent to Google for ad delivery, and to the AI service you chose (Anthropic or Google) only when you use AI receipt reading.</p>
+<h2>8. Children's Privacy</h2>
+<p>The App is not directed to any specific age group. We do not knowingly collect personal information from children under the age of 13.</p>
+<h2>9. Security</h2>
+<p>Because the App stores data on your device, the security of the device itself (screen lock, keeping the OS up to date, etc.) is the most important. Please manage your device appropriately.</p>
+<h2>10. Deleting Your Data</h2>
+<p>You can delete all the data you registered from the App's settings. Uninstalling the App also removes its data from your phone. Images sent for AI reading are handled under the terms of the service you chose, so please contact that service about deleting them.</p>
+<p>Files you exported or saved (see "6. Exporting and Sharing Data") are not always removed when you uninstall the App. On Android, they remain in the shared folders on your phone. On iPhone, the App's folder in the Files app is deleted together with the App, so copy any file you want to keep to another place first; photos saved to the Photos app remain in the Photos app. Please delete files you no longer need yourself.</p>
+<h2>11. Changes to This Policy</h2>
+<p>We may update this policy as needed. Any changes will be published on this page, and the "Effective" date will be revised.</p>
+<h2>12. Contact</h2>
+<p>For questions about this Privacy Policy or the App, please contact us:</p>
+<ul>
+<li>App name: DokoOita</li>
+<li>Package name (Android): jp.dokoita.android</li>
+<li>Bundle ID (iPhone): jp.dokoita.dokoOita</li>
+<li>Contact: dokooita@gmail.com</li>
+<li>Developer: the developer shown on the App's Google Play page or App Store page</li>
+</ul>
+</section>
+<section id="ja" lang="ja" class="policy" hidden>
+<h1>プライバシーポリシー – DokoOita</h1>
+<p class="date">制定日：2026年10月19日（2026年10月23日に、iPhone版の内容を加えました）</p>
+<p>このプライバシーポリシーは、開発者（以下「当方」）が、Android・iPhone向けアプリ「DokoOita」（以下「本アプリ」）で、利用者の情報をどのように取り扱うかを説明するものです。</p>
+<h2>1. 本アプリが扱う情報</h2>
+<p>本アプリは、次の情報を扱います。</p>
+<h3>利用者が入力する情報</h3>
+<ul>
+<li>写真（カメラで撮影したもの、Androidではギャラリー、iPhoneでは「写真」から選んだもの）</li>
+<li>動画（本アプリのカメラで撮影したもの。音声を含みます）</li>
+<li>音声入力または手入力した文字</li>
+<li>日付・価格・数量などの数値データ</li>
+<li>AIによるレシート読み取りに使う、APIキー（利用者が自分で入力するもの）</li>
+</ul>
+<h3>自動的に扱われる情報</h3>
+<ul>
+<li>広告の配信に関する情報（「4. 広告」を参照）</li>
+</ul>
+<p>本アプリを通じて、氏名・住所・電話番号・位置情報などを当方が収集することはありません。アカウント登録は不要です。</p>
+<h2>2. データの保存場所</h2>
+<p>本アプリに入力した内容（写真・動画・文字・家計簿・レシート・買い物メモ・終活の記録など）は、すべて、利用者の端末の中にだけ保存されます。当方のサーバーへ送られることはなく、当方が受け取ったり保管したりすることはありません。</p>
+<p>Androidでは、端末のバックアップ設定によって、Androidの仕組み（Googleバックアップなど）により、アプリのデータがGoogleアカウントに保存されることがあります。iPhoneでは、iCloudバックアップや、パソコンへのiPhoneのバックアップを使っている場合、本アプリのデータもその中に含まれることがあります。これらは、利用者ご自身の設定のもとで、GoogleまたはAppleが取り扱うもので、当方が受け取ることも、見ることもできません。</p>
+<h2>3. 本アプリが使う許可（権限）</h2>
+<h3>Android</h3>
+<ul>
+<li>カメラ：写真・動画を撮影するため</li>
+<li>マイク：動画を撮影するときに音声を録音するため</li>
+<li>インターネット：広告の配信と、任意のAIレシート読み取りのため</li>
+<li>広告ID：広告の配信のため（「4. 広告」を参照）</li>
+<li>ストレージへの書き込み：Android 9以前のみ。「ダウンロード」「ピクチャ」などのフォルダにファイルを保存するため</li>
+</ul>
+<h3>iPhone</h3>
+<ul>
+<li>カメラ：写真・動画を撮影するため</li>
+<li>マイク：動画を撮影するときに音声を録音するため</li>
+<li>写真：「写真」から写真を選ぶため、および写真を「写真」アプリに保存するため（保存のときは、写真を「追加するだけ」の許可を求めます）</li>
+<li>トラッキング（App Tracking Transparency）：最初の広告を表示する前に、他社のアプリやWebサイトをまたいで利用者を追跡（トラッキング）することを許可するか、お尋ねします。許可した場合、広告配信のために、広告用の識別子（IDFA）が使われることがあります。許可しなくても、本アプリは同じように使えます。選択は、いつでも「設定」→「プライバシーとセキュリティ」→「トラッキング」で変更できます</li>
+<li>インターネット：広告の配信と、任意のAIレシート読み取りのため</li>
+<li>「ファイル」アプリ：保存・書き出したファイルは、本アプリのフォルダ（「ファイル」アプリの「このiPhone内」→「DokoOita」で見られます）に保存されます</li>
+</ul>
+<p>位置情報・連絡先は使いません。</p>
+<p>音声入力は、本アプリの機能ではなく、お使いのスマートフォンのキーボード（OSの音声認識）の機能です。本アプリ自身が、音声入力のために声を録音したり送信したりすることはありません。音声データは、OS・キーボードの提供元（Google、Apple、端末メーカーなど）の方針に従って扱われます。</p>
+<h2>4. 広告</h2>
+<p>本アプリは、広告の表示にGoogle AdMobを使います。このため、Googleが、次のような情報を収集することがあります。</p>
+<ul>
+<li>広告ID（Androidの広告ID）。iPhoneでは、トラッキングを許可した場合に限り、広告用の識別子（IDFA）</li>
+<li>IPアドレス（そこから、おおよその位置が推定されます）</li>
+<li>端末の種類とOSのバージョン</li>
+<li>アプリの利用状況と診断情報（クラッシュログ、パフォーマンスのデータなど）</li>
+</ul>
+<p>広告は、インストールから7日後から、画面を切り替えたときに、6時間に1回までの間隔で表示されます。</p>
+<p>欧州経済領域（EEA）、英国、その他の一部の地域では、広告の前に、同意の画面（Googleのメッセージ用ツール）が表示されます。選択は、あとから変更できます。</p>
+<p>Androidでは、端末の「設定」→「Google」→「広告」で、広告のパーソナライズをオフにしたり、広告IDをリセットしたりできます。iPhoneでは、「設定」→「プライバシーとセキュリティ」→「トラッキング」で、本アプリのトラッキングをオフにできます。Googleでの情報の取り扱いは、Googleのプライバシーポリシー（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）と、「Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用」（<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a>）をご覧ください。</p>
+<h2>5. AIによるレシート読み取り（任意）</h2>
+<p>「レシート登録」には、任意で使えるAI読み取りの機能があります。使うには、次のサービスのどちらかを選び、利用者ご自身のAPIキー（サービス提供元から取得するキー）を、本アプリに入力します。</p>
+<ul>
+<li>Anthropic（Claude）</li>
+<li>Google（Gemini API）</li>
+</ul>
+<p>「AI読み取り」を選んで、レシートを撮影すると、その画像は、利用者の端末から、選んだサービスのサーバーへ、直接送られます。サービスは、店名・日付・品名・価格を読み取り、本アプリへ返します。</p>
+<ul>
+<li>AI読み取りは、利用者が選んだときだけ動きます。</li>
+<li>手入力を選んだ場合、画像が本アプリの外へ送られることはありません。</li>
+<li>画像は、当方のサーバーを通りません。当方が画像を受け取ったり保管したりすることはありません。</li>
+<li>APIキーは、端末の中にだけ保存し、選んだサービスの認証にだけ使います。ZIPなどの書き出しファイルには含まれません。</li>
+<li>利用者のアカウントとAPIキーには、選んだサービスの利用規約が適用されます（年齢などの条件が定められていることがあります）。画像の取り扱いは、そのサービスの利用規約とプライバシーポリシーによって決まります。</li>
+</ul>
+<h3>Google（Gemini API）を使うときの大切な注意</h3>
+<p>Googleの規約によると、Gemini APIを無料の枠（請求先アカウントなし）で使う場合、送った内容（レシートの画像など）が、Googleの製品の改善に使われたり、人の目で読まれたりすることがあります。請求先アカウントを設定した有料の利用には、これは当てはまりません。Googleの規約では、欧州経済領域・スイス・英国の利用者には、無料の枠を含め、すべての利用に有料の利用の規約が適用されます。レシートには買い物の情報が含まれるため、サービスを選ぶときにご考慮いただくか、手入力をご利用ください。</p>
+<p>各サービスの規約とプライバシーポリシー：</p>
+<ul>
+<li>Anthropicのプライバシーポリシー（<a href="https://www.anthropic.com/legal/privacy" rel="noopener">https://www.anthropic.com/legal/privacy</a>）</li>
+<li>Google Gemini API 追加利用規約（<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a>）</li>
+<li>Googleのプライバシーポリシー（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）</li>
+</ul>
+<h2>6. データの書き出しと共有</h2>
+<p>本アプリには、データを本アプリの外へ取り出す機能があります。</p>
+<ul>
+<li>PDF・CSVの書き出し</li>
+<li>写真を含むZIPの書き出し</li>
+<li>写真・動画の保存</li>
+<li>LINE・メールなどのアプリでの共有</li>
+</ul>
+<p>これらは、利用者が操作したときだけ行われます。</p>
+<p>Androidでは、ファイルは「Download/Kakeibo」「Download/DokoOita」「Pictures/DokoOita」「Movies/DokoOita」などのフォルダに保存されます。これらは端末の共有フォルダなので、他のアプリや、端末を使える人が見られることがあります。</p>
+<p>iPhoneでは、ファイルは、本アプリのフォルダ（「ファイル」アプリの「このiPhone内」→「DokoOita」で見られます）に保存されます。ZIPなどのデータは「data」、動画は「Movies」、PDF・CSVは「Kakeibo」です。写真は、「写真」アプリのアルバムに保存されます。iPhoneを使える人や、「写真」へのアクセスを許可したアプリが、見られることがあります。</p>
+<p>共有したあとのデータの扱いは、利用者と、受け取る側のサービスの責任になります。</p>
+<h2>7. 第三者への提供</h2>
+<p>法令に基づく場合を除き、当方が、利用者の情報を第三者に提供することはありません。ただし、前記のとおり、広告の配信のために必要な情報はGoogleに、AIレシート読み取りを使った場合に限り、必要な情報は利用者が選んだAIサービス（AnthropicまたはGoogle）に、送られます。</p>
+<h2>8. お子様のプライバシー</h2>
+<p>本アプリは、特定の年齢の方だけを対象としたものではありません。13歳未満のお子様の個人情報を、当方が意図して収集することはありません。</p>
+<h2>9. 安全のために</h2>
+<p>本アプリは、情報を端末の中に保存するため、端末自体の管理（画面ロックの設定、OSを最新に保つことなど）が、いちばん大切です。端末を適切に管理してください。</p>
+<h2>10. データの削除</h2>
+<p>本アプリの設定から、登録したデータをすべて削除できます。本アプリを削除（アンインストール）すると、アプリの中のデータも、端末から消えます。AI読み取りのために送った画像は、選んだサービスの規約に従って扱われるため、その削除は、各サービスにお問い合わせください。</p>
+<p>書き出したり保存したりしたファイル（「6. データの書き出しと共有」を参照）は、アプリを削除しても、すべてが消えるとは限りません。Androidでは、端末の共有フォルダに残ります。iPhoneでは、「ファイル」アプリの中の本アプリのフォルダは、アプリを削除すると一緒に消えますので、残したいファイルは、先に別の場所へコピーしてください。「写真」アプリに保存した写真は、「写真」アプリに残ります。不要になったファイルは、ご自身で削除してください。</p>
+<h2>11. このポリシーの変更</h2>
+<p>必要に応じて、このポリシーを更新することがあります。変更した場合は、このページでお知らせし、「制定日」の表示を改めます。</p>
+<h2>12. お問い合わせ</h2>
+<p>このプライバシーポリシーや本アプリについてのお問い合わせは、次へお願いします。</p>
+<ul>
+<li>アプリ名：DokoOita</li>
+<li>パッケージ名（Android）：jp.dokoita.android</li>
+<li>バンドルID（iPhone）：jp.dokoita.dokoOita</li>
+<li>連絡先：dokooita@gmail.com</li>
+<li>開発者：本アプリのGoogle Playのページ、またはApp Storeのページに表示されている開発者</li>
+</ul>
+</section>
+<section id="ko" lang="ko" class="policy" hidden>
+<h1>개인정보 처리방침 – DokoOita</h1>
+<p class="date">제정일: 2026년 10월 19일 (2026년 10월 23일에 iPhone 버전 내용을 추가했습니다)</p>
+<p>본 개인정보 처리방침은 개발자(이하 “당사”)가 Android・iPhone용 앱 “DokoOita”(이하 “앱”)에서 이용자의 정보를 어떻게 다루는지 설명합니다.</p>
+<h2>1. 앱이 다루는 정보</h2>
+<p>앱은 다음 정보를 다룹니다.</p>
+<h3>이용자가 입력하는 정보</h3>
+<ul>
+<li>사진(카메라로 촬영한 것, Android에서는 갤러리, iPhone에서는 “사진”에서 선택한 것)</li>
+<li>동영상(앱의 카메라로 촬영한 것, 소리 포함)</li>
+<li>음성 입력 또는 직접 입력한 문자</li>
+<li>날짜・가격・수량 등의 숫자 데이터</li>
+<li>AI 영수증 인식에 사용하는 API 키(이용자가 직접 입력)</li>
+</ul>
+<h3>자동으로 처리되는 정보</h3>
+<ul>
+<li>광고 게재와 관련된 정보(“4. 광고” 참조)</li>
+</ul>
+<p>당사는 앱을 통해 이름・주소・전화번호・위치 정보 등을 수집하지 않습니다. 계정 등록은 필요 없습니다.</p>
+<h2>2. 데이터 저장 위치</h2>
+<p>앱에 입력한 모든 내용(사진・동영상・문자・가계부・영수증・쇼핑 메모・종활 기록 등)은 이용자의 기기 안에만 저장됩니다. 당사 서버로 전송되지 않으며, 당사가 받거나 보관하지 않습니다.</p>
+<p>Android에서는 기기의 백업 설정에 따라 Android의 기능(Google 백업 등)으로 앱 데이터가 Google 계정에 저장될 수 있습니다. iPhone에서는 iCloud 백업이나 컴퓨터로의 iPhone 백업을 사용하는 경우 앱 데이터가 그 안에 포함될 수 있습니다. 이는 이용자 본인의 설정에 따라 Google 또는 Apple이 처리하는 것이며, 당사는 받지도 볼 수도 없습니다.</p>
+<h2>3. 앱이 사용하는 권한</h2>
+<h3>Android</h3>
+<ul>
+<li>카메라: 사진・동영상을 촬영하기 위해</li>
+<li>마이크: 동영상 촬영 시 소리를 녹음하기 위해</li>
+<li>인터넷: 광고 게재와 선택 사항인 AI 영수증 인식을 위해</li>
+<li>광고 ID: 광고 게재를 위해(“4. 광고” 참조)</li>
+<li>저장소 쓰기: Android 9 이하에서만, “다운로드”, “사진” 등의 폴더에 파일을 저장하기 위해</li>
+</ul>
+<h3>iPhone</h3>
+<ul>
+<li>카메라: 사진・동영상을 촬영하기 위해</li>
+<li>마이크: 동영상 촬영 시 소리를 녹음하기 위해</li>
+<li>사진: “사진”에서 사진을 선택하기 위해, 그리고 사진을 “사진” 앱에 저장하기 위해(저장할 때는 사진을 “추가만 하는” 권한을 요청합니다)</li>
+<li>추적(App Tracking Transparency): 첫 광고를 표시하기 전에, 다른 회사의 앱과 웹사이트에 걸쳐 이용자를 추적하는 것을 허용할지 묻습니다. 허용하면 광고 게재를 위해 광고 식별자(IDFA)가 사용될 수 있습니다. 허용하지 않아도 앱은 동일하게 사용할 수 있습니다. 선택은 언제든 “설정” &gt; “개인정보 보호 및 보안” &gt; “추적”에서 변경할 수 있습니다</li>
+<li>인터넷: 광고 게재와 선택 사항인 AI 영수증 인식을 위해</li>
+<li>“파일” 앱: 저장・내보낸 파일은 앱 전용 폴더(“파일” 앱의 “나의 iPhone” &gt; “DokoOita”에서 볼 수 있음)에 저장됩니다</li>
+</ul>
+<p>위치 정보와 연락처는 사용하지 않습니다.</p>
+<p>음성 입력은 앱의 기능이 아니라 스마트폰 키보드(OS의 음성 인식)의 기능입니다. 앱 자체가 음성 입력을 위해 음성을 녹음하거나 전송하지 않습니다. 음성 데이터는 OS・키보드 제공업체(Google, Apple, 기기 제조사 등)의 방침에 따라 처리됩니다.</p>
+<h2>4. 광고</h2>
+<p>앱은 광고 표시에 Google AdMob을 사용합니다. 이를 위해 Google이 다음과 같은 정보를 수집할 수 있습니다.</p>
+<ul>
+<li>광고 ID(Android 광고 ID). iPhone에서는 추적을 허용한 경우에 한해 광고 식별자(IDFA)</li>
+<li>IP 주소(이를 통해 대략적인 위치가 추정됩니다)</li>
+<li>기기 종류와 OS 버전</li>
+<li>앱 사용 현황과 진단 정보(충돌 로그, 성능 데이터 등)</li>
+</ul>
+<p>광고는 설치 후 7일이 지난 시점부터, 화면을 전환할 때, 6시간에 1회까지의 간격으로 표시됩니다.</p>
+<p>유럽경제지역(EEA), 영국 및 일부 지역에서는 광고에 앞서 동의 화면(Google의 메시지 도구)이 표시됩니다. 선택은 나중에 변경할 수 있습니다.</p>
+<p>Android에서는 기기의 “설정” &gt; “Google” &gt; “광고”에서 광고 맞춤 설정을 끄거나 광고 ID를 재설정할 수 있습니다. iPhone에서는 “설정” &gt; “개인정보 보호 및 보안” &gt; “추적”에서 이 앱의 추적을 끌 수 있습니다. Google의 정보 처리에 대해서는 Google 개인정보처리방침(<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>)과 “Google 서비스를 사용하는 사이트 또는 앱에서 Google이 정보를 사용하는 방법”(<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a>)을 참조하세요.</p>
+<h2>5. AI 영수증 인식(선택 사항)</h2>
+<p>“영수증 등록”에는 선택해서 사용할 수 있는 AI 인식 기능이 있습니다. 사용하려면 다음 서비스 중 하나를 선택하고, 이용자 본인의 API 키(서비스 제공업체에서 발급받은 키)를 앱에 입력합니다.</p>
+<ul>
+<li>Anthropic(Claude)</li>
+<li>Google(Gemini API)</li>
+</ul>
+<p>“AI 인식”을 선택하고 영수증을 촬영하면 그 이미지는 이용자의 기기에서 선택한 서비스의 서버로 직접 전송됩니다. 서비스는 상호명・날짜・품목명・가격을 읽어 앱에 돌려줍니다.</p>
+<ul>
+<li>AI 인식은 이용자가 선택한 경우에만 작동합니다.</li>
+<li>직접 입력을 선택한 경우 이미지가 앱 밖으로 전송되지 않습니다.</li>
+<li>이미지는 당사 서버를 거치지 않습니다. 당사가 이미지를 받거나 보관하지 않습니다.</li>
+<li>API 키는 기기 안에만 저장되며 선택한 서비스의 인증에만 사용됩니다. ZIP 등 내보내기 파일에는 포함되지 않습니다.</li>
+<li>이용자의 계정과 API 키에는 선택한 서비스의 이용약관이 적용됩니다(연령 등의 조건이 정해져 있을 수 있습니다). 이미지의 처리 방식은 해당 서비스의 이용약관과 개인정보처리방침에 따라 정해집니다.</li>
+</ul>
+<h3>Google(Gemini API) 사용 시 중요한 안내</h3>
+<p>Google의 약관에 따르면, Gemini API를 무료 등급(결제 계정 없음)으로 사용하는 경우 전송한 내용(영수증 이미지 등)이 Google 제품 개선에 사용되거나 사람이 읽을 수 있습니다. 결제 계정을 설정한 유료 이용에는 해당하지 않습니다. Google의 약관에 따르면 유럽경제지역・스위스・영국의 이용자에게는 무료 한도를 포함한 모든 이용에 유료 이용 약관이 적용됩니다. 영수증에는 쇼핑 정보가 포함되므로, 서비스를 선택할 때 이를 고려하시거나 직접 입력을 이용해 주세요.</p>
+<p>각 서비스의 약관과 개인정보처리방침:</p>
+<ul>
+<li>Anthropic 개인정보처리방침(<a href="https://www.anthropic.com/legal/privacy" rel="noopener">https://www.anthropic.com/legal/privacy</a>)</li>
+<li>Google Gemini API 추가 약관(<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a>)</li>
+<li>Google 개인정보처리방침(<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>)</li>
+</ul>
+<h2>6. 데이터 내보내기와 공유</h2>
+<p>앱에는 데이터를 앱 밖으로 꺼내는 기능이 있습니다.</p>
+<ul>
+<li>PDF・CSV 내보내기</li>
+<li>사진을 포함한 ZIP 내보내기</li>
+<li>사진・동영상 저장</li>
+<li>LINE・이메일 등의 앱으로 공유</li>
+</ul>
+<p>이러한 기능은 이용자가 조작했을 때만 실행됩니다.</p>
+<p>Android에서는 파일이 “Download/Kakeibo”, “Download/DokoOita”, “Pictures/DokoOita”, “Movies/DokoOita” 등의 폴더에 저장됩니다. 이 폴더들은 기기의 공유 폴더이므로 다른 앱이나 기기를 사용할 수 있는 사람이 볼 수 있습니다.</p>
+<p>iPhone에서는 파일이 앱 전용 폴더(“파일” 앱의 “나의 iPhone” &gt; “DokoOita”에서 볼 수 있음)에 저장됩니다. ZIP 등의 데이터는 “data”, 동영상은 “Movies”, PDF・CSV는 “Kakeibo”입니다. 사진은 “사진” 앱의 앨범에 저장됩니다. iPhone을 사용할 수 있는 사람이나 “사진” 접근을 허용한 앱이 볼 수 있습니다.</p>
+<p>공유한 이후의 데이터 처리는 이용자와 받는 서비스의 책임입니다.</p>
+<h2>7. 제3자 제공</h2>
+<p>법령에 따른 경우를 제외하고, 당사는 이용자의 정보를 제3자에게 제공하지 않습니다. 다만 위에서 설명한 대로 광고 게재에 필요한 정보는 Google에, AI 영수증 인식을 사용한 경우에 한해 필요한 정보는 이용자가 선택한 AI 서비스(Anthropic 또는 Google)에 전송됩니다.</p>
+<h2>8. 어린이의 개인정보</h2>
+<p>앱은 특정 연령층만을 대상으로 하지 않습니다. 당사는 13세 미만 어린이의 개인정보를 의도적으로 수집하지 않습니다.</p>
+<h2>9. 보안</h2>
+<p>앱은 정보를 기기 안에 저장하므로 기기 자체의 관리(화면 잠금 설정, OS 최신 상태 유지 등)가 가장 중요합니다. 기기를 적절히 관리해 주세요.</p>
+<h2>10. 데이터 삭제</h2>
+<p>앱의 설정에서 등록한 모든 데이터를 삭제할 수 있습니다. 앱을 삭제(제거)하면 앱 안의 데이터도 기기에서 사라집니다. AI 인식을 위해 전송한 이미지는 선택한 서비스의 약관에 따라 처리되므로, 삭제에 대해서는 해당 서비스에 문의해 주세요.</p>
+<p>내보내거나 저장한 파일(“6. 데이터 내보내기와 공유” 참조)은 앱을 삭제해도 모두 사라지는 것은 아닙니다. Android에서는 기기의 공유 폴더에 남습니다. iPhone에서는 “파일” 앱의 앱 폴더가 앱과 함께 삭제되므로, 남기고 싶은 파일은 먼저 다른 곳에 복사해 주세요. “사진” 앱에 저장한 사진은 “사진” 앱에 남습니다. 필요 없어진 파일은 직접 삭제해 주세요.</p>
+<h2>11. 방침의 변경</h2>
+<p>필요에 따라 본 방침을 변경할 수 있습니다. 변경하는 경우 이 페이지에서 알려 드리며 “제정일” 표시를 고칩니다.</p>
+<h2>12. 문의</h2>
+<p>본 개인정보 처리방침이나 앱에 대한 문의는 아래로 부탁드립니다.</p>
+<ul>
+<li>앱 이름: DokoOita</li>
+<li>패키지 이름(Android): jp.dokoita.android</li>
+<li>번들 ID(iPhone): jp.dokoita.dokoOita</li>
+<li>연락처: dokooita@gmail.com</li>
+<li>개발자: 앱의 Google Play 페이지 또는 App Store 페이지에 표시된 개발자</li>
+</ul>
+</section>
+<section id="zh-Hans" lang="zh-Hans" class="policy" hidden>
+<h1>隐私政策 – DokoOita</h1>
+<p class="date">制定日期：2026年10月19日（2026年10月23日增加了 iPhone 版本的内容）</p>
+<p>本隐私政策说明开发者（以下简称“我们”）如何在 Android 和 iPhone 应用“DokoOita”（以下简称“本应用”）中处理用户的信息。</p>
+<h2>1. 本应用处理的信息</h2>
+<p>本应用处理以下信息。</p>
+<h3>用户输入的信息</h3>
+<ul>
+<li>照片（用相机拍摄的，或在 Android 上从相册、在 iPhone 上从“照片”中选择的）</li>
+<li>视频（用本应用的相机拍摄，包含声音）</li>
+<li>通过语音输入或手动输入的文字</li>
+<li>日期、价格、数量等数值数据</li>
+<li>用于 AI 识别小票的 API 密钥（由用户自行输入）</li>
+</ul>
+<h3>自动处理的信息</h3>
+<ul>
+<li>与广告投放相关的信息（参见“4. 广告”）</li>
+</ul>
+<p>我们不会通过本应用收集姓名、地址、电话号码、位置信息等。无需注册账号。</p>
+<h2>2. 数据的保存位置</h2>
+<p>您在本应用中输入的所有内容（照片、视频、文字、家庭账簿、小票、购物备忘、人生终末记录等）都只保存在您的设备中。这些数据不会发送到我们的服务器，我们不会接收或保存。</p>
+<p>在 Android 上，根据设备的备份设置，应用数据可能通过 Android 的功能（如 Google 备份）保存到您的 Google 账号。在 iPhone 上，如果您使用 iCloud 备份或电脑备份，本应用的数据可能包含在其中。这些均由 Google 或 Apple 按您自己的设置处理，我们不会接收，也无法查看。</p>
+<h2>3. 本应用使用的权限</h2>
+<h3>Android</h3>
+<ul>
+<li>相机：用于拍摄照片和视频</li>
+<li>麦克风：用于拍摄视频时录制声音</li>
+<li>互联网：用于广告投放和可选的 AI 小票识别</li>
+<li>广告 ID：用于广告投放（参见“4. 广告”）</li>
+<li>写入存储空间：仅限 Android 9 及以下，用于将文件保存到“下载”“图片”等文件夹</li>
+</ul>
+<h3>iPhone</h3>
+<ul>
+<li>相机：用于拍摄照片和视频</li>
+<li>麦克风：用于拍摄视频时录制声音</li>
+<li>照片：用于从“照片”中选择照片，以及将照片保存到“照片”App（保存时，仅请求“添加照片”的权限）</li>
+<li>跟踪（App Tracking Transparency）：在首次显示广告之前，本应用会询问您是否允许跨其他公司的应用和网站跟踪您。如果您允许，可能会使用广告标识符（IDFA）来投放广告。即使不允许，本应用也可以照常使用。您可以随时在“设置”&gt;“隐私与安全性”&gt;“跟踪”中更改选择</li>
+<li>互联网：用于广告投放和可选的 AI 小票识别</li>
+<li>“文件”App：保存或导出的文件存放在本应用的文件夹中（可在“文件”App 的“我的 iPhone”&gt;“DokoOita”中查看）</li>
+</ul>
+<p>本应用不使用位置信息和通讯录。</p>
+<p>语音输入是手机键盘（操作系统的语音识别）的功能，不是本应用的功能。本应用自身不会为语音输入而录制或发送您的声音。语音数据按操作系统和键盘提供方（Google、Apple、设备厂商等）的政策处理。</p>
+<h2>4. 广告</h2>
+<p>本应用使用 Google AdMob 显示广告。为此，Google 可能会收集以下信息。</p>
+<ul>
+<li>广告 ID（Android 广告 ID）。在 iPhone 上，仅在您允许跟踪时，才会使用广告标识符（IDFA）</li>
+<li>IP 地址（据此估算大致位置）</li>
+<li>设备类型和操作系统版本</li>
+<li>应用使用情况和诊断信息（崩溃日志、性能数据等）</li>
+</ul>
+<p>广告从安装后第 7 天开始，在切换画面时显示，间隔最短为 6 小时 1 次。</p>
+<p>在欧洲经济区（EEA）、英国及部分其他地区，显示广告前会先显示同意界面（Google 的消息工具）。您之后可以更改选择。</p>
+<p>在 Android 上，您可以在设备的“设置”&gt;“Google”&gt;“广告”中关闭广告个性化并重置广告 ID。在 iPhone 上，可在“设置”&gt;“隐私与安全性”&gt;“跟踪”中关闭本应用的跟踪。关于 Google 如何处理信息，请参阅 Google 隐私权政策（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）以及“Google 如何使用使用其服务的网站或应用中的信息”（<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a>）。</p>
+<h2>5. AI 小票识别（可选）</h2>
+<p>“登记小票”提供可选的 AI 识别功能。使用时，您需选择以下服务之一，并在本应用中输入您自己的 API 密钥（从服务提供方获取的密钥）。</p>
+<ul>
+<li>Anthropic（Claude）</li>
+<li>Google（Gemini API）</li>
+</ul>
+<p>当您选择“AI 识别”并拍摄小票后，该图像会从您的设备直接发送到您所选服务的服务器。该服务会读取店名、日期、品名和价格，并返回给本应用。</p>
+<ul>
+<li>AI 识别仅在您选择时运行。</li>
+<li>如果您选择手动输入，图像不会被发送到本应用之外。</li>
+<li>图像不会经过我们的服务器。我们不会接收或保存图像。</li>
+<li>API 密钥只保存在您的设备中，仅用于所选服务的认证。不会包含在 ZIP 等导出文件中。</li>
+<li>您的账号和 API 密钥适用所选服务的使用条款（可能对年龄等有要求）。图像如何处理，取决于该服务的使用条款和隐私政策。</li>
+</ul>
+<h3>使用 Google（Gemini API）时的重要提示</h3>
+<p>根据 Google 的条款，以免费层（未设置结算账号）使用 Gemini API 时，发送的内容（小票图像等）可能被 Google 用于改进其产品，也可能被人工审核人员阅读。设置了结算账号的付费使用不适用此规定。根据 Google 的条款，对于欧洲经济区、瑞士和英国的用户，包括免费额度在内的所有使用，均适用付费使用的条款。由于小票包含购物信息，请在选择服务时予以考虑，或改用手动输入。</p>
+<p>各服务的条款和隐私政策：</p>
+<ul>
+<li>Anthropic 隐私政策（<a href="https://www.anthropic.com/legal/privacy" rel="noopener">https://www.anthropic.com/legal/privacy</a>）</li>
+<li>Google Gemini API 附加条款（<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a>）</li>
+<li>Google 隐私权政策（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）</li>
+</ul>
+<h2>6. 数据的导出与分享</h2>
+<p>本应用具有将数据导出到应用之外的功能。</p>
+<ul>
+<li>导出 PDF、CSV</li>
+<li>导出包含照片的 ZIP</li>
+<li>保存照片和视频</li>
+<li>通过 LINE、电子邮件等应用分享</li>
+</ul>
+<p>这些操作仅在您主动执行时进行。</p>
+<p>在 Android 上，文件保存在“Download/Kakeibo”“Download/DokoOita”“Pictures/DokoOita”“Movies/DokoOita”等文件夹中。这些是手机的共享文件夹，其他应用或能够使用您手机的人可能会看到。</p>
+<p>在 iPhone 上，文件保存在本应用的文件夹中（可在“文件”App 的“我的 iPhone”&gt;“DokoOita”中查看）：ZIP 等数据在“data”，视频在“Movies”，PDF 和 CSV 在“Kakeibo”。照片保存到“照片”App 的相簿中。能够使用您 iPhone 的人，以及您允许访问“照片”的应用，可能会看到这些内容。</p>
+<p>分享之后数据如何处理，由您和接收方服务负责。</p>
+<h2>7. 向第三方提供</h2>
+<p>除法律要求的情况外，我们不会向第三方提供用户信息。但如上所述，广告投放所需的信息会发送给 Google；仅在使用 AI 小票识别时，必要的信息会发送给您所选的 AI 服务（Anthropic 或 Google）。</p>
+<h2>8. 儿童隐私</h2>
+<p>本应用并非面向特定年龄段的用户。我们不会有意收集 13 岁以下儿童的个人信息。</p>
+<h2>9. 安全</h2>
+<p>由于本应用将数据保存在您的设备中，设备本身的管理（设置锁屏、保持系统为最新等）最为重要。请妥善管理您的设备。</p>
+<h2>10. 数据的删除</h2>
+<p>您可以在本应用的设置中删除您登记的全部数据。卸载本应用后，应用内的数据也会从手机中删除。为 AI 识别而发送的图像按所选服务的条款处理，如需删除，请联系该服务。</p>
+<p>导出或保存的文件（参见“6. 数据的导出与分享”）在卸载本应用后不一定会全部删除。在 Android 上，它们会保留在手机的共享文件夹中。在 iPhone 上，“文件”App 中本应用的文件夹会随应用一起删除，请先将想保留的文件复制到其他位置；保存到“照片”App 的照片会保留在“照片”App 中。不再需要的文件，请自行删除。</p>
+<h2>11. 政策的变更</h2>
+<p>我们可能会根据需要更新本政策。如有变更，将在本页面公布，并更新“制定日期”。</p>
+<h2>12. 联系方式</h2>
+<p>关于本隐私政策或本应用的问题，请联系：</p>
+<ul>
+<li>应用名称：DokoOita</li>
+<li>包名（Android）：jp.dokoita.android</li>
+<li>捆绑包 ID（iPhone）：jp.dokoita.dokoOita</li>
+<li>联系邮箱：dokooita@gmail.com</li>
+<li>开发者：本应用 Google Play 页面或 App Store 页面上显示的开发者</li>
+</ul>
+</section>
+<section id="zh-Hant" lang="zh-Hant" class="policy" hidden>
+<h1>隱私權政策 – DokoOita</h1>
+<p class="date">制定日期：2026年10月19日（2026年10月23日增加了 iPhone 版本的內容）</p>
+<p>本隱私權政策說明開發者（以下簡稱「我們」）如何在 Android 與 iPhone 應用程式「DokoOita」（以下簡稱「本應用程式」）中處理使用者的資訊。</p>
+<h2>1. 本應用程式處理的資訊</h2>
+<p>本應用程式處理以下資訊。</p>
+<h3>使用者輸入的資訊</h3>
+<ul>
+<li>照片（用相機拍攝的，或在 Android 上從相簿、在 iPhone 上從「照片」中選取的）</li>
+<li>影片（用本應用程式的相機拍攝，包含聲音）</li>
+<li>以語音輸入或手動輸入的文字</li>
+<li>日期、價格、數量等數值資料</li>
+<li>用於 AI 辨識收據的 API 金鑰（由使用者自行輸入）</li>
+</ul>
+<h3>自動處理的資訊</h3>
+<ul>
+<li>與廣告投放相關的資訊（請參閱「4. 廣告」）</li>
+</ul>
+<p>我們不會透過本應用程式蒐集姓名、地址、電話號碼、位置資訊等。無需註冊帳號。</p>
+<h2>2. 資料的儲存位置</h2>
+<p>您在本應用程式中輸入的所有內容（照片、影片、文字、家庭帳簿、收據、購物備忘、人生終末記錄等）都只儲存在您的裝置中。這些資料不會傳送到我們的伺服器，我們不會接收或保存。</p>
+<p>在 Android 上，依據裝置的備份設定，應用程式資料可能透過 Android 的功能（如 Google 備份）儲存到您的 Google 帳號。在 iPhone 上，如果您使用 iCloud 備份或電腦備份，本應用程式的資料可能包含在其中。這些均由 Google 或 Apple 依您自己的設定處理，我們不會接收，也無法查看。</p>
+<h2>3. 本應用程式使用的權限</h2>
+<h3>Android</h3>
+<ul>
+<li>相機：用於拍攝照片和影片</li>
+<li>麥克風：用於拍攝影片時錄製聲音</li>
+<li>網際網路：用於廣告投放和選用的 AI 收據辨識</li>
+<li>廣告 ID：用於廣告投放（請參閱「4. 廣告」）</li>
+<li>寫入儲存空間：僅限 Android 9 及以下，用於將檔案儲存到「下載」「圖片」等資料夾</li>
+</ul>
+<h3>iPhone</h3>
+<ul>
+<li>相機：用於拍攝照片和影片</li>
+<li>麥克風：用於拍攝影片時錄製聲音</li>
+<li>照片：用於從「照片」中選取照片，以及將照片儲存到「照片」App（儲存時，僅要求「新增照片」的權限）</li>
+<li>追蹤（App Tracking Transparency）：在首次顯示廣告之前，本應用程式會詢問您是否允許跨其他公司的 App 和網站追蹤您。如果您允許，可能會使用廣告識別碼（IDFA）來投放廣告。即使不允許，本應用程式也可以照常使用。您可以隨時在「設定」&gt;「隱私權與安全性」&gt;「追蹤」中變更選擇</li>
+<li>網際網路：用於廣告投放和選用的 AI 收據辨識</li>
+<li>「檔案」App：儲存或匯出的檔案存放在本應用程式的資料夾中（可在「檔案」App 的「我的 iPhone」&gt;「DokoOita」中查看）</li>
+</ul>
+<p>本應用程式不使用位置資訊和聯絡人。</p>
+<p>語音輸入是手機鍵盤（作業系統的語音辨識）的功能，不是本應用程式的功能。本應用程式本身不會為語音輸入而錄製或傳送您的聲音。語音資料依作業系統與鍵盤提供者（Google、Apple、裝置製造商等）的政策處理。</p>
+<h2>4. 廣告</h2>
+<p>本應用程式使用 Google AdMob 顯示廣告。為此，Google 可能會蒐集以下資訊。</p>
+<ul>
+<li>廣告 ID（Android 廣告 ID）。在 iPhone 上，僅在您允許追蹤時，才會使用廣告識別碼（IDFA）</li>
+<li>IP 位址（據此估算大致位置）</li>
+<li>裝置類型和作業系統版本</li>
+<li>應用程式使用情況和診斷資訊（當機記錄、效能資料等）</li>
+</ul>
+<p>廣告從安裝後第 7 天開始，在切換畫面時顯示，間隔最短為 6 小時 1 次。</p>
+<p>在歐洲經濟區（EEA）、英國及部分其他地區，顯示廣告前會先顯示同意畫面（Google 的訊息工具）。您之後可以變更選擇。</p>
+<p>在 Android 上，您可以在裝置的「設定」&gt;「Google」&gt;「廣告」中關閉廣告個人化並重設廣告 ID。在 iPhone 上，可在「設定」&gt;「隱私權與安全性」&gt;「追蹤」中關閉本應用程式的追蹤。關於 Google 如何處理資訊，請參閱 Google 隱私權政策（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）以及「Google 如何使用使用其服務的網站或應用程式中的資訊」（<a href="https://policies.google.com/technologies/partner-sites" rel="noopener">https://policies.google.com/technologies/partner-sites</a>）。</p>
+<h2>5. AI 收據辨識（選用）</h2>
+<p>「登錄收據」提供選用的 AI 辨識功能。使用時，您需選擇以下服務之一，並在本應用程式中輸入您自己的 API 金鑰（從服務提供者取得的金鑰）。</p>
+<ul>
+<li>Anthropic（Claude）</li>
+<li>Google（Gemini API）</li>
+</ul>
+<p>當您選擇「AI 辨識」並拍攝收據後，該影像會從您的裝置直接傳送到您所選服務的伺服器。該服務會讀取店名、日期、品名和價格，並回傳給本應用程式。</p>
+<ul>
+<li>AI 辨識僅在您選擇時執行。</li>
+<li>如果您選擇手動輸入，影像不會被傳送到本應用程式之外。</li>
+<li>影像不會經過我們的伺服器。我們不會接收或保存影像。</li>
+<li>API 金鑰只儲存在您的裝置中，僅用於所選服務的驗證。不會包含在 ZIP 等匯出檔案中。</li>
+<li>您的帳號和 API 金鑰適用所選服務的使用條款（可能對年齡等有要求）。影像如何處理，取決於該服務的使用條款和隱私權政策。</li>
+</ul>
+<h3>使用 Google（Gemini API）時的重要提示</h3>
+<p>根據 Google 的條款，以免費層級（未設定帳單帳戶）使用 Gemini API 時，傳送的內容（收據影像等）可能被 Google 用於改進其產品，也可能被人工審查人員閱讀。設定了帳單帳戶的付費使用不適用此規定。根據 Google 的條款，對於歐洲經濟區、瑞士和英國的使用者，包括免費額度在內的所有使用，均適用付費使用的條款。由於收據包含購物資訊，請在選擇服務時予以考慮，或改用手動輸入。</p>
+<p>各服務的條款和隱私權政策：</p>
+<ul>
+<li>Anthropic 隱私權政策（<a href="https://www.anthropic.com/legal/privacy" rel="noopener">https://www.anthropic.com/legal/privacy</a>）</li>
+<li>Google Gemini API 附加條款（<a href="https://ai.google.dev/gemini-api/terms" rel="noopener">https://ai.google.dev/gemini-api/terms</a>）</li>
+<li>Google 隱私權政策（<a href="https://policies.google.com/privacy" rel="noopener">https://policies.google.com/privacy</a>）</li>
+</ul>
+<h2>6. 資料的匯出與分享</h2>
+<p>本應用程式具有將資料匯出到應用程式之外的功能。</p>
+<ul>
+<li>匯出 PDF、CSV</li>
+<li>匯出包含照片的 ZIP</li>
+<li>儲存照片和影片</li>
+<li>透過 LINE、電子郵件等應用程式分享</li>
+</ul>
+<p>這些操作僅在您主動執行時進行。</p>
+<p>在 Android 上，檔案儲存在「Download/Kakeibo」「Download/DokoOita」「Pictures/DokoOita」「Movies/DokoOita」等資料夾中。這些是手機的共用資料夾，其他應用程式或能夠使用您手機的人可能會看到。</p>
+<p>在 iPhone 上，檔案儲存在本應用程式的資料夾中（可在「檔案」App 的「我的 iPhone」&gt;「DokoOita」中查看）：ZIP 等資料在「data」，影片在「Movies」，PDF 和 CSV 在「Kakeibo」。照片儲存到「照片」App 的相簿中。能夠使用您 iPhone 的人，以及您允許存取「照片」的 App，可能會看到這些內容。</p>
+<p>分享之後資料如何處理，由您和接收方服務負責。</p>
+<h2>7. 向第三方提供</h2>
+<p>除法律要求的情況外，我們不會向第三方提供使用者資訊。但如上所述，廣告投放所需的資訊會傳送給 Google；僅在使用 AI 收據辨識時，必要的資訊會傳送給您所選的 AI 服務（Anthropic 或 Google）。</p>
+<h2>8. 兒童隱私</h2>
+<p>本應用程式並非針對特定年齡層的使用者。我們不會有意蒐集 13 歲以下兒童的個人資訊。</p>
+<h2>9. 安全</h2>
+<p>由於本應用程式將資料儲存在您的裝置中，裝置本身的管理（設定螢幕鎖定、保持系統為最新等）最為重要。請妥善管理您的裝置。</p>
+<h2>10. 資料的刪除</h2>
+<p>您可以在本應用程式的設定中刪除您登錄的全部資料。解除安裝本應用程式後，應用程式內的資料也會從手機中刪除。為 AI 辨識而傳送的影像依所選服務的條款處理，如需刪除，請聯絡該服務。</p>
+<p>匯出或儲存的檔案（請參閱「6. 資料的匯出與分享」）在解除安裝本應用程式後不一定會全部刪除。在 Android 上，它們會保留在手機的共用資料夾中。在 iPhone 上，「檔案」App 中本應用程式的資料夾會隨 App 一併刪除，請先將想保留的檔案複製到其他位置；儲存到「照片」App 的照片會保留在「照片」App 中。不再需要的檔案，請自行刪除。</p>
+<h2>11. 政策的變更</h2>
+<p>我們可能會視需要更新本政策。如有變更，將在本頁面公布，並更新「制定日期」。</p>
+<h2>12. 聯絡方式</h2>
+<p>關於本隱私權政策或本應用程式的問題，請聯絡：</p>
+<ul>
+<li>應用程式名稱：DokoOita</li>
+<li>套件名稱（Android）：jp.dokoita.android</li>
+<li>套件識別碼（iPhone）：jp.dokoita.dokoOita</li>
+<li>聯絡信箱：dokooita@gmail.com</li>
+<li>開發者：本應用程式 Google Play 頁面或 App Store 頁面上顯示的開發者</li>
+</ul>
+</section>
+<noscript><style>.policy[hidden]{display:block !important}</style></noscript>
+</main>
+<footer>DokoOita &middot; dokooita@gmail.com</footer>
+<script>
+(function(){
+  var codes=["en","ja","ko","zh-Hans","zh-Hant"];
+  var titles={"en":"Privacy Policy – DokoOita","ja":"プライバシーポリシー – DokoOita","ko":"개인정보 처리방침 – DokoOita","zh-Hans":"隐私政策 – DokoOita","zh-Hant":"隱私權政策 – DokoOita"};
+  function pick(){
+    var q=(location.search.match(/[?&]lang=([^&]+)/)||[])[1];
+    var h=(location.hash||"").replace("#","");
+    var want=(h||q||"");
+    var low=want.toLowerCase();
+    for(var i=0;i<codes.length;i++){ if(codes[i].toLowerCase()===low) return codes[i]; }
+    var n=((navigator.languages&&navigator.languages[0])||navigator.language||"en").toLowerCase();
+    if(n.indexOf("ja")===0) return "ja";
+    if(n.indexOf("ko")===0) return "ko";
+    if(n.indexOf("zh")===0){
+      if(/hant|tw|hk|mo/.test(n)) return "zh-Hant";
+      return "zh-Hans";
+    }
+    return "en";
+  }
+  function show(code,push){
+    codes.forEach(function(c){
+      var s=document.getElementById(c); if(s) s.hidden=(c!==code);
+    });
+    var bs=document.querySelectorAll("nav.langs button");
+    for(var i=0;i<bs.length;i++){ bs[i].setAttribute("aria-pressed", bs[i].getAttribute("data-lang")===code ? "true":"false"); }
+    document.documentElement.lang=code;
+    document.title=titles[code];
+    if(push){ try{ history.replaceState(null,"","#"+code); }catch(e){ location.hash="#"+code; } }
+  }
+  var bs=document.querySelectorAll("nav.langs button");
+  for(var i=0;i<bs.length;i++){
+    bs[i].addEventListener("click",function(){ show(this.getAttribute("data-lang"),true); window.scrollTo(0,0); });
+  }
+  window.addEventListener("hashchange",function(){ show(pick(),false); });
+  show(pick(),false);
+})();
+</script>
 </body>
 </html>
