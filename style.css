@@ -186,3 +186,11 @@ ol.gsteps>li>.gtxt{margin-bottom:10px}
 .gp-text{display:flex;flex-direction:column;line-height:1.2}
 .gp-sub{color:#fff;font-size:.75rem;font-family:sans-serif;font-weight:400}
 .gp-main{color:#fff;font-size:1.35rem;font-family:sans-serif;font-weight:700;white-space:nowrap}
+
+.getit .gp-link+.gp-link{margin-left:10px}
+@media (max-width:520px){.getit .gp-link{display:block}.getit .gp-link+.gp-link{margin:10px 0 0}}
+.apps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:14px}
+.app{background:#fff;border-radius:12px;padding:18px 20px}
+.app h3{margin:0 0 6px;font-size:1.15rem}
+.app p{margin:0 0 10px}
+.app .stores{display:flex;flex-wrap:wrap;gap:10px;margin:0}
