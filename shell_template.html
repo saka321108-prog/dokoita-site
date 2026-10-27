@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{TITLE}}</title>
+<meta name="description" content="{{DESC}}">
+<link rel="icon" href="{{ICON}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--green:#1f6b4f;--green-d:#14503a;--bg:#f4fbf8;--ink:#1d2b25;--line:#cfe3da;--card:#ffffff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"BIZ UDPGothic","Hiragino Kaku Gothic ProN","Yu Gothic","Meiryo","Apple SD Gothic Neo","Malgun Gothic","PingFang SC","Microsoft YaHei","PingFang TC","Microsoft JhengHei","Noto Sans CJK JP","Noto Sans",sans-serif;line-height:1.85;font-size:16px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 56px}
+header.top{background:var(--green);color:#fff}
+header.top .in{max-width:820px;margin:0 auto;padding:14px 16px;display:flex;align-items:center;gap:12px}
+header.top img{width:40px;height:40px;border-radius:9px;background:#fff}
+header.top .name{font-weight:700;font-size:1.15rem;letter-spacing:.02em}
+nav.langs{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.langs .in{max-width:820px;margin:0 auto;padding:10px 16px;display:flex;flex-wrap:wrap;gap:8px}
+nav.langs button{font:inherit;font-size:.95rem;border:1.5px solid var(--green);background:#fff;color:var(--green-d);border-radius:999px;padding:6px 16px;cursor:pointer;min-height:40px}
+nav.langs button[aria-pressed="true"]{background:var(--green);color:#fff}
+nav.langs button:focus-visible{outline:3px solid #f2b705;outline-offset:2px}
+.policy{background:var(--card);border:1px solid var(--line);border-radius:14px;margin-top:20px;padding:8px 22px 26px}
+.policy h1{font-size:1.5rem;line-height:1.4;color:var(--green-d);margin:.9em 0 .2em;padding-bottom:.35em;border-bottom:3px solid var(--green)}
+.policy h2{font-size:1.12rem;line-height:1.5;color:var(--green-d);margin:1.9em 0 .4em;padding-left:.6em;border-left:5px solid var(--green)}
+.policy h3{font-size:1rem;margin:1.2em 0 .2em;color:var(--green-d)}
+.policy p{margin:.55em 0}
+.policy p.date{color:#51665c;font-size:.93rem}
+.policy ul{margin:.4em 0 .6em;padding-left:1.4em}
+.policy li{margin:.3em 0}
+.policy a{color:#0b5cad;word-break:break-all}
+footer{max-width:820px;margin:26px auto 0;padding:0 16px;color:#51665c;font-size:.85rem}
+@media (max-width:480px){.policy{padding:4px 14px 20px}.policy h1{font-size:1.3rem}}
+noscript .policy{display:block}
+</style>
+</head>
+<body>
+<header class="top"><div class="in"><img src="{{ICON}}" alt="" width="40" height="40"><span class="name">{{APP}}</span></div></header>
+<nav class="langs" aria-label="Language"><div class="in">{{NAV}}</div></nav>
+<main class="wrap">
+{{SECTIONS}}<noscript><style>.policy[hidden]{display:block !important}</style></noscript>
+</main>
+<footer>{{FOOTER}}</footer>
+<script>
+(function(){
+  var codes={{CODES}};
+  var titles={{TITLES}};
+  function pick(){
+    var q=(location.search.match(/[?&]lang=([^&]+)/)||[])[1];
+    var h=(location.hash||"").replace("#","");
+    var want=(h||q||"");
+    var low=want.toLowerCase();
+    for(var i=0;i<codes.length;i++){ if(codes[i].toLowerCase()===low) return codes[i]; }
+    var n=((navigator.languages&&navigator.languages[0])||navigator.language||"en").toLowerCase();
+    if(n.indexOf("ja")===0) return "ja";
+    if(n.indexOf("ko")===0) return "ko";
+    if(n.indexOf("zh")===0){
+      if(/hant|tw|hk|mo/.test(n)) return "zh-Hant";
+      return "zh-Hans";
+    }
+    return "en";
+  }
+  function show(code,push){
+    if(codes.indexOf(code)<0) code="en";
+    codes.forEach(function(c){
+      var s=document.getElementById(c); if(s) s.hidden=(c!==code);
+    });
+    var bs=document.querySelectorAll("nav.langs button");
+    for(var i=0;i<bs.length;i++){ bs[i].setAttribute("aria-pressed", bs[i].getAttribute("data-lang")===code ? "true":"false"); }
+    document.documentElement.lang=code;
+    document.title=titles[code];
+    if(push){ try{ history.replaceState(null,"","#"+code); }catch(e){ location.hash="#"+code; } }
+  }
+  var bs=document.querySelectorAll("nav.langs button");
+  for(var i=0;i<bs.length;i++){
+    bs[i].addEventListener("click",function(){ show(this.getAttribute("data-lang"),true); window.scrollTo(0,0); });
+  }
+  window.addEventListener("hashchange",function(){ show(pick(),false); });
+  show(pick(),false);
+})();
+</script>
+</body>
+</html>
